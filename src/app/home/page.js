@@ -1,20 +1,18 @@
-"use client";
-
 import Image from 'next/image'
 import HeadshotImage from '../../../public/1714499008926.jpeg'
 import IntroductionItem from "@/components/introduction_item";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub} from "@fortawesome/free-brands-svg-icons/faGithub";
-import {faArrowUpRightFromSquare, faStar, faCircle} from "@fortawesome/pro-solid-svg-icons";
+import {faArrowUpRightFromSquare, faStar} from "@fortawesome/pro-solid-svg-icons";
 import CustomerList from "@/components/customer_list";
-import {useRef} from "react";
-import {customers} from "@/data/customers";
 import TechStackList from "@/components/techstack_list";
-import {projects} from "@/data/projects";
+import {getCustomerList} from "@/libs/customer";
+import {getProjectList} from "@/libs/projects";
 
 export default function IndexPage() {
-    const customerList = useRef(customers);
-    const projectList = useRef(projects);
+    const customerList = getCustomerList();
+    const projectList = getProjectList();
+
     return (
         <>
             <IntroductionItem title="Introduction">
@@ -85,7 +83,7 @@ export default function IndexPage() {
                                 Tech Stack
                             </p>
                             {
-                                projectList.current[0].techStack.map((techStackItem, index) => (
+                                projectList[0].techStack.map((techStackItem, index) => (
                                     <TechStackList key={"techstack-0-" + index} title={techStackItem.title}
                                                    items={techStackItem.items}/>
                                 ))
@@ -93,7 +91,7 @@ export default function IndexPage() {
                             <p className="font-bold">
                                 Customers
                             </p>
-                            <CustomerList customers={customerList.current}/>
+                            <CustomerList customers={customerList}/>
                         </li>
                         <li className="pt-5">
                             <a className="text-green-500"
@@ -106,7 +104,7 @@ export default function IndexPage() {
                                 Tech Stack
                             </p>
                             {
-                                projectList.current[1].techStack.map((techStackItem, index) => (
+                                projectList[1].techStack.map((techStackItem, index) => (
                                     <TechStackList key={"techstack-1-" + index} title={techStackItem.title}
                                                    items={techStackItem.items}/>
                                 ))
