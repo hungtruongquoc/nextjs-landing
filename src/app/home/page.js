@@ -10,7 +10,7 @@ export default function IndexPage() {
         <>
             <IntroductionItem title="Introduction">
                 <div className="columns-2 pt-5">
-                    <p>
+                    <p className="px-10">
                         As an innovative Senior Full Stack Developer and Technical Leader with over a decade of
                         experience
                         across healthcare, insurance, and logistics industries, I have consistently generated robust,
@@ -33,9 +33,9 @@ export default function IndexPage() {
                     </Image>
                 </div>
             </IntroductionItem>
-            <div className="columns-2">
+            <div className="grid grid-cols-2">
                 <IntroductionItem title="Soure Code Links">
-                    <ul className="pt-5">
+                    <ul className="pt-5 px-10">
                         <span className="text-2xl"><FontAwesomeIcon icon={faGithub}/> Github</span>
                         <li>
                             <a href="https://github.com/hungtruongquoc/nextjs-landing">
@@ -45,7 +45,7 @@ export default function IndexPage() {
                     </ul>
                 </IntroductionItem>
                 <IntroductionItem title="Honorable Projects">
-                    <ul className="pt-5">
+                    <ul className="pt-5 px-10">
                         <li>
                             <a className="text-amber-400" href="https://beetrack.io/home-en/">
                                 Enterprise Level Asset Management Platform
@@ -55,6 +55,11 @@ export default function IndexPage() {
                             </p>
                             <p className="pl-5"><a href="https://aeonmall.beetrack.vn/login">Aeon Mall Vietnam</a></p>
                             <p className="pl-5"><a href="https://movenpickpq-mik.beetrack.vn/login">MÖVENPICK RESORT WAVERLY PHU QUOC</a></p>
+                        </li>
+                        <li className="pt-5">
+                            <a className="text-green-500" href="https://app.takecommandhealth.com/sign-in?next=/member-portal">
+                                Take Command Health Platform
+                            </a>
                         </li>
                     </ul>
                 </IntroductionItem>
