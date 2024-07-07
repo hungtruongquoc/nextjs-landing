@@ -35,13 +35,13 @@ RUN pnpm build
 # Use the official Node.js 18 image as the base image for the final stage
 FROM node:18-alpine AS runner
 # Add a build argument for the environment variable
-ARG FONTAWESOME_PACKAGE_TOKEN
+#ARG FONTAWESOME_PACKAGE_TOKEN
 
 # Install pnpm
 RUN npm install -g pnpm
 
 # Set environment variables
-#ENV NODE_ENV=production
+ENV NODE_ENV=production
 # Export the environment variable
 #ENV FONTAWESOME_PACKAGE_TOKEN=$FONTAWESOME_PACKAGE_TOKEN
 # Set the working directory inside the container
