@@ -10,7 +10,7 @@ export default function IndexPage() {
         <>
             <IntroductionItem title="Introduction">
                 <div className="columns-2 pt-5">
-                    <p className="px-10">
+                    <p className="px-10 text-justify">
                         As an innovative Senior Full Stack Developer and Technical Leader with over a decade of
                         experience
                         across healthcare, insurance, and logistics industries, I have consistently generated robust,
