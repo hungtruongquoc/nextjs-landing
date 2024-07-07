@@ -1,11 +1,20 @@
+"use client";
+
 import Image from 'next/image'
 import HeadshotImage from '../../../public/1714499008926.jpeg'
 import IntroductionItem from "@/components/introduction_item";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub} from "@fortawesome/free-brands-svg-icons/faGithub";
-import {faArrowUpRightFromSquare, faBadgeCheck, faWrench, faStar} from "@fortawesome/pro-solid-svg-icons";
+import {faArrowUpRightFromSquare, faStar, faCircle} from "@fortawesome/pro-solid-svg-icons";
+import CustomerList from "@/components/customer_list";
+import {useRef} from "react";
+import {customers} from "@/data/customers";
+import TechStackList from "@/components/techstack_list";
+import {projects} from "@/data/projects";
 
 export default function IndexPage() {
+    const customerList = useRef(customers);
+    const projectList = useRef(projects);
     return (
         <>
             <IntroductionItem title="Introduction">
@@ -64,28 +73,16 @@ export default function IndexPage() {
                             <p className="font-bold">
                                 Tech Stack
                             </p>
-                            <ul>
-                                <li>Runtime: PHP 8.2, Laravel 11, Lumen</li>
-                                <li>Database: MariaDB</li>
-                                <li>Frontend: VueJS</li>
-                                <li>Message, Queue: Redis</li>
-                            </ul>
+                            {
+                                projectList.current[0].techStack.map((techStackItem, index) => (
+                                    <TechStackList key={"techstack-0-" + index} title={techStackItem.title}
+                                                   items={techStackItem.items}/>
+                                ))
+                            }
                             <p className="font-bold">
                                 Customers
                             </p>
-                            <p className="pl-5">
-                                <a href="https://aeonmall.beetrack.vn/login" target="_blank">
-                                    <FontAwesomeIcon icon={faBadgeCheck}/> Aeon Mall Vietnam <FontAwesomeIcon
-                                    icon={faArrowUpRightFromSquare}/> (Retail)
-                                </a>
-                            </p>
-                            <p className="pl-5">
-                                <a href="https://movenpickpq-mik.beetrack.vn/login" target="_blank">
-                                    <FontAwesomeIcon icon={faBadgeCheck}/> MÖVENPICK Resort Waverly Phu Quoc,
-                                    Vietnam <FontAwesomeIcon
-                                    icon={faArrowUpRightFromSquare}/> (Hospitality)
-                                </a>
-                            </p>
+                            <CustomerList customers={customerList.current}/>
                         </li>
                         <li className="pt-5">
                             <a className="text-green-500"
@@ -94,6 +91,15 @@ export default function IndexPage() {
                                 USA <FontAwesomeIcon
                                 icon={faArrowUpRightFromSquare}/>
                             </a>
+                            <p className="font-bold">
+                                Tech Stack
+                            </p>
+                            {
+                                projectList.current[1].techStack.map((techStackItem, index) => (
+                                    <TechStackList key={"techstack-1-" + index} title={techStackItem.title}
+                                                   items={techStackItem.items}/>
+                                ))
+                            }
                         </li>
                     </ul>
                 </IntroductionItem>
