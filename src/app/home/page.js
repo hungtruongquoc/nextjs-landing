@@ -33,28 +33,32 @@ export default function IndexPage() {
                     </Image>
                 </div>
             </IntroductionItem>
-            <IntroductionItem title="Soure Code Links">
-                <ul className="pt-5">
-                    <span className="text-2xl"><FontAwesomeIcon icon={faGithub}/> Github</span>
-                    <li>
-                        <a href="https://github.com/hungtruongquoc/nextjs-landing">
-                            This landing page was developed with NextJS, Tailwind CSS
-                        </a>
-                    </li>
-                </ul>
-            </IntroductionItem>
-            <IntroductionItem title="Honorable Projects">
-                <ul className="pt-5">
-                    <li>
-                        <a href="https://beetrack.io/home-en/">
-                            Enterprise Level Asset Management Platform
-                        </a>
-                        <p>
-                            Deployed at following customers:
-                        </p>
-                    </li>
-                </ul>
-            </IntroductionItem>
+            <div className="columns-2">
+                <IntroductionItem title="Soure Code Links">
+                    <ul className="pt-5">
+                        <span className="text-2xl"><FontAwesomeIcon icon={faGithub}/> Github</span>
+                        <li>
+                            <a href="https://github.com/hungtruongquoc/nextjs-landing">
+                                This landing page was developed with NextJS, Tailwind CSS
+                            </a>
+                        </li>
+                    </ul>
+                </IntroductionItem>
+                <IntroductionItem title="Honorable Projects">
+                    <ul className="pt-5">
+                        <li>
+                            <a className="text-amber-400" href="https://beetrack.io/home-en/">
+                                Enterprise Level Asset Management Platform
+                            </a>
+                            <p>
+                                Customers
+                            </p>
+                            <p className="pl-5"><a href="https://aeonmall.beetrack.vn/login">Aeon Mall Vietnam</a></p>
+                            <p className="pl-5"><a href="https://movenpickpq-mik.beetrack.vn/login">MÖVENPICK RESORT WAVERLY PHU QUOC</a></p>
+                        </li>
+                    </ul>
+                </IntroductionItem>
+            </div>
         </>
     )
 }
