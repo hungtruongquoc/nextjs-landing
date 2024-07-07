@@ -41,9 +41,9 @@ ARG FONTAWESOME_PACKAGE_TOKEN
 RUN npm install -g pnpm
 
 # Set environment variables
-ENV NODE_ENV=production
+#ENV NODE_ENV=production
 # Export the environment variable
-ENV FONTAWESOME_PACKAGE_TOKEN=$FONTAWESOME_PACKAGE_TOKEN
+#ENV FONTAWESOME_PACKAGE_TOKEN=$FONTAWESOME_PACKAGE_TOKEN
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -53,7 +53,7 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/src ./src
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/next.config.mjs ./next.config.mjs
-COPY --from=builder /app/.npmrc ./.npmrc
+#COPY --from=builder /app/.npmrc ./.npmrc
 
 # Install only production dependencies
 RUN pnpm install --prod
