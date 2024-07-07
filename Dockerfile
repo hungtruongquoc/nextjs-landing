@@ -34,6 +34,8 @@ RUN pnpm build
 
 # Use the official Node.js 18 image as the base image for the final stage
 FROM node:18-alpine AS runner
+# Add a build argument for the environment variable
+ARG FONTAWESOME_PACKAGE_TOKEN
 
 # Install pnpm
 RUN npm install -g pnpm
