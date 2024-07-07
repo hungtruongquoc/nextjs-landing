@@ -44,8 +44,8 @@ COPY --from=builder /app/next.config.mjs ./next.config.mjs
 RUN pnpm install --prod
 
 # Expose the port the app runs on
-EXPOSE 80
+EXPOSE 8080
 
-# Start the Next.js application on port 80
-ENV PORT 80
+# Start the Next.js application on port 8080
+ENV PORT 8080
 CMD ["pnpm", "start"]
