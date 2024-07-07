@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/pro-solid-svg-icons'
 
 export default function Home() {
   return (
@@ -15,6 +17,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
+            <FontAwesomeIcon icon={faEnvelope} />
             By{" "}
             <Image
               src="/vercel.svg"
