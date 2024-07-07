@@ -1,12 +1,15 @@
 import Image from 'next/image'
 import HeadshotImage from '../../../public/1714499008926.jpeg'
 import IntroductionItem from "@/components/introduction_item";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faGithub} from "@fortawesome/free-brands-svg-icons/faGithub";
+import {faStar} from "@fortawesome/pro-solid-svg-icons/faStar";
 
 export default function IndexPage() {
     return (
         <>
             <IntroductionItem title="Introduction">
-                <div className="columns-2 pt-10">
+                <div className="columns-2 pt-5">
                     <p>
                         As an innovative Senior Full Stack Developer and Technical Leader with over a decade of
                         experience
@@ -30,8 +33,27 @@ export default function IndexPage() {
                     </Image>
                 </div>
             </IntroductionItem>
-            <IntroductionItem title="GitHub Links">
-
+            <IntroductionItem title="Soure Code Links">
+                <ul className="pt-5">
+                    <span className="text-2xl"><FontAwesomeIcon icon={faGithub}/> Github</span>
+                    <li>
+                        <a href="https://github.com/hungtruongquoc/nextjs-landing">
+                            This landing page was developed with NextJS, Tailwind CSS
+                        </a>
+                    </li>
+                </ul>
+            </IntroductionItem>
+            <IntroductionItem title="Honorable Projects">
+                <ul className="pt-5">
+                    <li>
+                        <a href="https://beetrack.io/home-en/">
+                            Enterprise Level Asset Management Platform
+                        </a>
+                        <p>
+                            Deployed at following customers:
+                        </p>
+                    </li>
+                </ul>
             </IntroductionItem>
         </>
     )

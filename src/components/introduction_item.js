@@ -1,7 +1,10 @@
-export default function IntroductionItem({ title, children }) {
+export default function IntroductionItem({ title, children, icon }) {
     return (
         <>
-            <h1 className="text-6xl pt-20">{title}</h1>
+            <h1 className="pt-10">
+                <span>{icon ? icon : null}</span>
+                <span className="text-4xl">{title}</span>
+            </h1>
             {children}
         </>
     )
