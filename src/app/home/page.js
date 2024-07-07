@@ -56,7 +56,7 @@ export default function IndexPage() {
                     <ul className="pt-5 px-10">
                         <span className="text-2xl"><FontAwesomeIcon icon={faGithub}/> Github</span>
                         <li>
-                            <a href="https://github.com/hungtruongquoc/nextjs-landing" target="_blank">
+                            <a className="font-black" href="https://github.com/hungtruongquoc/nextjs-landing" target="_blank">
                                 This landing page was developed with NextJS, Tailwind CSS <FontAwesomeIcon
                                 icon={faArrowUpRightFromSquare}/>
                             </a>
@@ -66,6 +66,19 @@ export default function IndexPage() {
                             <ul>
                                 <li>Runtime: NodeJS</li>
                                 <li>Frontend: NextJS, Tailwind CSS</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a className="font-black" href="https://github.com/hungtruongquoc/angular-asset-list" target="_blank">
+                                An Angular App showing list of assets <FontAwesomeIcon
+                                icon={faArrowUpRightFromSquare}/>
+                            </a>
+                            <p className="font-bold">
+                                Tech Stack
+                            </p>
+                            <ul>
+                                <li>Runtime: NodeJS</li>
+                                <li>Frontend: Angular 17</li>
                             </ul>
                         </li>
                     </ul>
