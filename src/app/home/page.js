@@ -3,8 +3,7 @@ import HeadshotImage from '../../../public/1714499008926.jpeg'
 import IntroductionItem from "@/components/introduction_item";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub} from "@fortawesome/free-brands-svg-icons/faGithub";
-import {faStar} from "@fortawesome/pro-solid-svg-icons/faStar";
-import {faArrowUpRightFromSquare} from "@fortawesome/pro-solid-svg-icons";
+import {faArrowUpRightFromSquare, faBadgeCheck, faWrench, faStar} from "@fortawesome/pro-solid-svg-icons";
 
 export default function IndexPage() {
     return (
@@ -43,6 +42,13 @@ export default function IndexPage() {
                                 This landing page was developed with NextJS, Tailwind CSS <FontAwesomeIcon
                                 icon={faArrowUpRightFromSquare}/>
                             </a>
+                            <p className="font-bold">
+                                Tech Stack
+                            </p>
+                            <ul>
+                                <li>Runtime: NodeJS</li>
+                                <li>Frontend: NextJS, Tailwind CSS</li>
+                            </ul>
                         </li>
                     </ul>
                 </IntroductionItem>
@@ -51,23 +57,33 @@ export default function IndexPage() {
                         <li>
                             <a className="text-amber-400" href="https://beetrack.io/home-en/"
                                target="_blank">
-                                Enterprise Level Asset Management Platform <FontAwesomeIcon
+                                <FontAwesomeIcon icon={faStar}/> Enterprise Level Asset Management
+                                Platform <FontAwesomeIcon
                                 icon={faArrowUpRightFromSquare}/>
                             </a>
-                            <p>
+                            <p className="font-bold">
+                                Tech Stack
+                            </p>
+                            <ul>
+                                <li>Runtime: PHP 8.2, Laravel 11, Lumen</li>
+                                <li>Database: MariaDB</li>
+                                <li>Frontend: VueJS</li>
+                                <li>Message, Queue: Redis</li>
+                            </ul>
+                            <p className="font-bold">
                                 Customers
                             </p>
                             <p className="pl-5">
                                 <a href="https://aeonmall.beetrack.vn/login" target="_blank">
-                                    <FontAwesomeIcon icon={faStar}/> Aeon Mall Vietnam <FontAwesomeIcon
-                                    icon={faArrowUpRightFromSquare}/>
+                                    <FontAwesomeIcon icon={faBadgeCheck}/> Aeon Mall Vietnam <FontAwesomeIcon
+                                    icon={faArrowUpRightFromSquare}/> (Retail)
                                 </a>
                             </p>
                             <p className="pl-5">
                                 <a href="https://movenpickpq-mik.beetrack.vn/login" target="_blank">
-                                    <FontAwesomeIcon icon={faStar}/> MÖVENPICK Resort Waverly Phu Quoc,
+                                    <FontAwesomeIcon icon={faBadgeCheck}/> MÖVENPICK Resort Waverly Phu Quoc,
                                     Vietnam <FontAwesomeIcon
-                                    icon={faArrowUpRightFromSquare}/>
+                                    icon={faArrowUpRightFromSquare}/> (Hospitality)
                                 </a>
                             </p>
                         </li>
