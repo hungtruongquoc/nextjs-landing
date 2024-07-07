@@ -26,6 +26,7 @@ COPY next.config.mjs ./next.config.mjs
 COPY jsconfig.json ./jsconfig.json
 COPY postcss.config.mjs ./postcss.config.mjs
 COPY tailwind.config.js ./tailwind.config.js
+COPY .npmrc ./.npmrc
 
 # Build the Next.js application
 RUN pnpm build
