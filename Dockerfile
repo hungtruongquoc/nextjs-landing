@@ -40,7 +40,8 @@ RUN npm install -g pnpm
 
 # Set environment variables
 ENV NODE_ENV=production
-
+# Export the environment variable
+ENV FONTAWESOME_PACKAGE_TOKEN=$FONTAWESOME_PACKAGE_TOKEN
 # Set the working directory inside the container
 WORKDIR /app
 
