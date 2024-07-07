@@ -17,6 +17,9 @@ RUN pnpm install
 COPY src ./src
 COPY public ./public
 COPY next.config.mjs ./next.config.mjs
+COPY jsconfig.json ./jsconfig.json
+COPY postcss.config.mjs ./postcss.config.mjs
+COPY tailwind.config.js ./tailwind.config.js
 
 # Build the Next.js application
 RUN pnpm build
