@@ -1,6 +1,12 @@
 # Use the official Node.js 18 image as the base image
 FROM node:18-alpine AS builder
 
+# Add a build argument for the environment variable
+ARG FONTAWESOME_PACKAGE_TOKEN
+
+# Export the environment variable
+ENV FONTAWESOME_PACKAGE_TOKEN=$FONTAWESOME_PACKAGE_TOKEN
+
 # Set the working directory inside the container
 WORKDIR /app
 
