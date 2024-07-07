@@ -17,7 +17,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faEnvelope} />
+            <FontAwesomeIcon icon={faEnvelope} color={"white"} />
             By{" "}
             <Image
               src="/vercel.svg"
