@@ -54,11 +54,11 @@ export default function IndexPage() {
                                 Customers
                             </p>
                             <p className="pl-5"><a href="https://aeonmall.beetrack.vn/login">Aeon Mall Vietnam</a></p>
-                            <p className="pl-5"><a href="https://movenpickpq-mik.beetrack.vn/login">MÖVENPICK RESORT WAVERLY PHU QUOC</a></p>
+                            <p className="pl-5"><a href="https://movenpickpq-mik.beetrack.vn/login">MÖVENPICK Resort Waverly Phu Quoc, Vietnam</a></p>
                         </li>
                         <li className="pt-5">
                             <a className="text-green-500" href="https://app.takecommandhealth.com/sign-in?next=/member-portal">
-                                Take Command Health Platform
+                                Take Command Health Platform, Dalla, TX USA
                             </a>
                         </li>
                     </ul>
