@@ -34,12 +34,23 @@ export default function IndexPage() {
                         solve
                         critical business challenges and propel organizational growth.
                     </p>
-                    <Image
-                        src={HeadshotImage}
-                        width="200"
-                        height="200"
-                        alt="Hung Truong, #OPEN_TO_WORK">
-                    </Image>
+                    <div>
+                        <Image
+                            src={HeadshotImage}
+                            width="200"
+                            height="200"
+                            alt="Hung Truong, #OPEN_TO_WORK">
+                        </Image>
+                        <ul>
+                            <span className="font-bold text-2xl">Contact Info</span>
+                            <li>
+                                <span className="font-bold">Email: </span><span>hungtruongquoc@gmail.com</span>
+                            </li>
+                            <li>
+                                <span className="font-bold">Mobile: </span><span>574-386-3696</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </IntroductionItem>
             <div className="grid grid-cols-2">
