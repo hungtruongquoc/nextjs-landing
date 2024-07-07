@@ -12,6 +12,7 @@ WORKDIR /app
 
 # Copy package.json and pnpm-lock.yaml to the working directory
 COPY package.json pnpm-lock.yaml ./
+COPY .npmrc ./.npmrc
 
 # Install pnpm
 RUN npm install -g pnpm
@@ -26,7 +27,7 @@ COPY next.config.mjs ./next.config.mjs
 COPY jsconfig.json ./jsconfig.json
 COPY postcss.config.mjs ./postcss.config.mjs
 COPY tailwind.config.js ./tailwind.config.js
-COPY .npmrc ./.npmrc
+
 
 # Build the Next.js application
 RUN pnpm build
