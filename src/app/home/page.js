@@ -73,6 +73,9 @@ export default function IndexPage() {
                                 An Angular App showing list of assets <FontAwesomeIcon
                                 icon={faArrowUpRightFromSquare}/>
                             </a>
+                            <a href="https://angular.htruong83.com/" target="_blank">
+                                Demo <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                            </a>
                             <p className="font-bold">
                                 Tech Stack
                             </p>
