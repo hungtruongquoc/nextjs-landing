@@ -83,7 +83,7 @@ export default function IndexPage() {
                             </p>
                             <ul>
                             <li>Runtime: NodeJS</li>
-                                <li>Frontend: Angular 17</li>
+                                <li>Frontend: Angular 18, Server Side Rendering, NgRx Store, RxJS, Ant Design</li>
                             </ul>
                         </li>
                     </ul>

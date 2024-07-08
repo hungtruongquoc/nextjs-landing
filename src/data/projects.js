@@ -8,7 +8,7 @@ export const projects = [
                 items: [
                     "Runtime: PHP 8.2, Laravel 11, Lumen",
                     "Database: MariaDB",
-                    "Frontend: VueJS",
+                    "Frontend: VueJS, VueX, VueRouter, element-ui",
                     "Messaage, Queue: Redis"
                 ]
             }
@@ -26,7 +26,7 @@ export const projects = [
             {
                 title: "new implementation",
                 items: ["Runtime: Java 17, AWS Lambda", "Database: RDS PostgreSQL, DynamoDB",
-                    "Frontend: ReactJS, Amplify", "Inter-service: SQS, SNS", "File Storage: S3"]
+                    "Frontend: ReactJS, Amplify, ReactQuery, Material UI", "Inter-service: SQS, SNS", "File Storage: S3"]
             },
         ]
     }
