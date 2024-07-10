@@ -56,7 +56,8 @@ export default function IndexPage() {
                     <ul className="pt-5 px-10">
                         <span className="text-2xl"><FontAwesomeIcon icon={faGithub}/> Github</span>
                         <li>
-                            <a className="font-black" href="https://github.com/hungtruongquoc/nextjs-landing" target="_blank">
+                            <a className="font-black" href="https://github.com/hungtruongquoc/nextjs-landing"
+                               target="_blank">
                                 This landing page was developed with NextJS, Tailwind CSS <FontAwesomeIcon
                                 icon={faArrowUpRightFromSquare}/>
                             </a>
@@ -69,7 +70,8 @@ export default function IndexPage() {
                             </ul>
                         </li>
                         <li>
-                            <a className="font-black" href="https://github.com/hungtruongquoc/angular-asset-list" target="_blank">
+                            <a className="font-black" href="https://github.com/hungtruongquoc/angular-asset-list"
+                               target="_blank">
                                 An Angular App showing list of assets <FontAwesomeIcon
                                 icon={faArrowUpRightFromSquare}/>
                             </a>
@@ -82,8 +84,33 @@ export default function IndexPage() {
                                 Tech Stack
                             </p>
                             <ul>
-                            <li>Runtime: NodeJS</li>
+                                <li>Runtime: NodeJS</li>
                                 <li>Frontend: Angular 18, Server Side Rendering, NgRx Store, RxJS, Ant Design</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a className="font-black" href="https://github.com/hungtruongquoc/fast-api-demo"
+                               target="_blank">
+                                A FastAPI demo <FontAwesomeIcon
+                                icon={faArrowUpRightFromSquare}/>
+                            </a>
+                            <p>
+                                <a href="https://fast-api.htruong83.com/api/v1" target="_blank">
+                                    Demo API v1 <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                </a>
+                            </p>
+                            <p>
+                                <a href="https://fast-api.htruong83.com/docs" target="_blank">
+                                    OpenAPI Doc <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                </a>
+                            </p>
+                            <p className="font-bold">
+                                Tech Stack
+                            </p>
+                            <ul>
+                                <li>Runtime: Python</li>
+                                <li>Framework: FastAPI</li>
+                                <li>Cloud service: FireBase, FireStore</li>
                             </ul>
                         </li>
                     </ul>
