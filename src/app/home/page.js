@@ -53,7 +53,7 @@ export default function IndexPage() {
             </IntroductionItem>
             <div className="grid grid-cols-2">
                 <IntroductionItem title="Soure Code Links">
-                    <ul className="pt-5 px-10">
+                    <ul className="pt-5 px-10 flex-col flex-nowrap gap-5">
                         <span className="text-2xl"><FontAwesomeIcon icon={faGithub}/> Github</span>
                         <li>
                             <a className="font-black" href="https://github.com/hungtruongquoc/nextjs-landing"
