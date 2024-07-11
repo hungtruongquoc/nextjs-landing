@@ -101,7 +101,7 @@ export default function IndexPage() {
                             </a>
                             <p>
                                 <a href="https://fast-api.htruong83.com/api/v1" target="_blank">
-                                    Demo API v1 <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                    Demo API v1 <FontAwesomeIcon icon={faArrowUpRightFromSquare}/> (Please contact me for API Key)
                                 </a>
                             </p>
                             <p>
