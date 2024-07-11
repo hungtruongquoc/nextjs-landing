@@ -47,6 +47,11 @@ export default function IndexPage() {
                             <li>
                                 <span className="font-bold">Mobile: </span><span>574-386-3696</span>
                             </li>
+                            <li>
+                                <span className="font-bold">LinkedIn: </span><a
+                                href="https://www.linkedin.com/in/htruong83/" target="_blank">htruong83 <FontAwesomeIcon
+                                icon={faArrowUpRightFromSquare}/></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -54,8 +59,8 @@ export default function IndexPage() {
             <div className="grid grid-cols-2">
                 <IntroductionItem title="Soure Code Links">
                     <ul className="pt-5 px-10 flex-col flex-nowrap gap-5">
-                        <span className="text-2xl"><FontAwesomeIcon icon={faGithub}/> Github</span>
-                        <li>
+                        <span className="text-2xl my-5"><FontAwesomeIcon icon={faGithub}/> Github</span>
+                        <li className="my-5">
                             <a className="font-black" href="https://github.com/hungtruongquoc/nextjs-landing"
                                target="_blank">
                                 This landing page was developed with NextJS, Tailwind CSS <FontAwesomeIcon
@@ -69,7 +74,7 @@ export default function IndexPage() {
                                 <li>Frontend: NextJS, Tailwind CSS</li>
                             </ul>
                         </li>
-                        <li>
+                        <li className="my-5">
                             <a className="font-black" href="https://github.com/hungtruongquoc/angular-asset-list"
                                target="_blank">
                                 An Angular App showing list of assets <FontAwesomeIcon
@@ -88,7 +93,7 @@ export default function IndexPage() {
                                 <li>Frontend: Angular 18, Server Side Rendering, NgRx Store, RxJS, Ant Design</li>
                             </ul>
                         </li>
-                        <li>
+                        <li className="my-5">
                             <a className="font-black" href="https://github.com/hungtruongquoc/fast-api-demo"
                                target="_blank">
                                 A FastAPI demo <FontAwesomeIcon
