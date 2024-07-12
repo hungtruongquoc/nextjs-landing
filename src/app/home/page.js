@@ -135,7 +135,7 @@ export default function IndexPage() {
                             <ul>
                                 <li>Runtime: Python, NodeJS</li>
                                 <li>Framework: Django, ReactJS</li>
-                                <li>Cloud service: Amplify</li>
+                                <li>Cloud service: Amplify, Elastic Beanstalk, CodePipeline, CodeBuild</li>
                             </ul>
                         </li>
                     </ul>
