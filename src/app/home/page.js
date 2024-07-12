@@ -118,6 +118,26 @@ export default function IndexPage() {
                                 <li>Cloud service: FireBase, FireStore</li>
                             </ul>
                         </li>
+                        <li className="my-5">
+                            <a className="font-black" href="https://github.com/hungtruongquoc/react-amplify"
+                               target="_blank">
+                                A React Amplify demo <FontAwesomeIcon
+                                icon={faArrowUpRightFromSquare}/>
+                            </a>
+                            <p>
+                                <a href="https://react-amplify.htruong83.com/" target="_blank">
+                                    Demo application <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                </a>
+                            </p>
+                            <p className="font-bold">
+                                Tech Stack
+                            </p>
+                            <ul>
+                                <li>Runtime: Python, NodeJS</li>
+                                <li>Framework: Django, ReactJS</li>
+                                <li>Cloud service: Amplify</li>
+                            </ul>
+                        </li>
                     </ul>
                 </IntroductionItem>
                 <IntroductionItem title="Honorable Projects">
