@@ -126,7 +126,10 @@ export default function IndexPage() {
                             </a>
                             <p>
                                 <a href="https://react-amplify.htruong83.com/" target="_blank">
-                                    Demo application <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                    Demo front end application <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                </a>
+                                <a href="https://django-demo.htruong83.com/" target="_blank">
+                                    Demo Django application <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
                                 </a>
                             </p>
                             <p className="font-bold">
