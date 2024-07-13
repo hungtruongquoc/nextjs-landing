@@ -143,6 +143,14 @@ export default function IndexPage() {
                                     View Code<FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
                                 </a>
                             </p>
+                            <p>
+                                <a className="mx-5" href="https://django-api-proxy.htruong83.com/swagger/" target="_blank">
+                                    NodeJS Proxy for HTTP REST API <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                </a>
+                                <a className="mx-5" href="https://github.com/hungtruongquoc/express-passthrough-django-demo" target="_blank">
+                                    View Code <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                </a>
+                            </p>
                             <p className="font-bold">
                                 <Link className="text-blue-950" href="/projects/1">
                                     <FontAwesomeIcon icon={faFileDoc}/> Documentation
