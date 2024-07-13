@@ -73,6 +73,7 @@ export default function IndexPage() {
                             <ul>
                                 <li>Runtime: NodeJS</li>
                                 <li>Frontend: NextJS, Tailwind CSS</li>
+                                <li>Containerization: Docker</li>
                             </ul>
                         </li>
                         <li className="my-5">
@@ -92,6 +93,7 @@ export default function IndexPage() {
                             <ul>
                                 <li>Runtime: NodeJS</li>
                                 <li>Frontend: Angular 18, Server Side Rendering, NgRx Store, RxJS, Ant Design</li>
+                                <li>Containerization: Docker</li>
                             </ul>
                         </li>
                         <li className="my-5">
@@ -102,7 +104,8 @@ export default function IndexPage() {
                             </a>
                             <p>
                                 <a href="https://fast-api.htruong83.com/api/v1" target="_blank">
-                                    Demo API v1 <FontAwesomeIcon icon={faArrowUpRightFromSquare}/> (Please contact me for API Key)
+                                    Demo API v1 <FontAwesomeIcon icon={faArrowUpRightFromSquare}/> (Please contact me
+                                    for API Key)
                                 </a>
                             </p>
                             <p>
@@ -117,6 +120,7 @@ export default function IndexPage() {
                                 <li>Runtime: Python</li>
                                 <li>Framework: FastAPI</li>
                                 <li>Cloud service: FireBase, FireStore</li>
+                                <li>Containerization: Docker</li>
                             </ul>
                         </li>
                         <li className="my-5">
@@ -151,8 +155,10 @@ export default function IndexPage() {
                             <ul>
                                 <li>Runtime: Python, NodeJS</li>
                                 <li>Framework: Django (Django Rest Framework), ReactJS</li>
-                                <li>Cloud service: Amplify, Elastic Beanstalk, CodePipeline, CodeBuild, S3, CloudFront
+                                <li>
+                                    Cloud service: Amplify, Elastic Beanstalk, CodePipeline, CodeBuild, S3, CloudFront
                                 </li>
+                                <li>Containerization: Docker</li>
                             </ul>
                         </li>
                     </ul>
