@@ -3,11 +3,12 @@ import HeadshotImage from '../../../public/1714499008926.jpeg'
 import IntroductionItem from "@/components/introduction_item";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub} from "@fortawesome/free-brands-svg-icons/faGithub";
-import {faArrowUpRightFromSquare, faStar} from "@fortawesome/pro-solid-svg-icons";
+import {faArrowUpRightFromSquare, faStar, faBook as faFileDoc} from "@fortawesome/pro-solid-svg-icons";
 import CustomerList from "@/components/customer_list";
 import TechStackList from "@/components/techstack_list";
 import {getCustomerList} from "@/libs/customer";
 import {getProjectList} from "@/libs/projects";
+import Link from "next/link";
 
 export default function IndexPage() {
     const customerList = getCustomerList();
@@ -139,12 +140,19 @@ export default function IndexPage() {
                                 </a>
                             </p>
                             <p className="font-bold">
+                                <Link className="text-blue-950" href="/projects/1">
+                                    <FontAwesomeIcon icon={faFileDoc}/> Documentation
+                                </Link>
+                            </p>
+
+                            <p className="font-bold">
                                 Tech Stack
                             </p>
                             <ul>
                                 <li>Runtime: Python, NodeJS</li>
                                 <li>Framework: Django (Django Rest Framework), ReactJS</li>
-                                <li>Cloud service: Amplify, Elastic Beanstalk, CodePipeline, CodeBuild, S3, CloudFront</li>
+                                <li>Cloud service: Amplify, Elastic Beanstalk, CodePipeline, CodeBuild, S3, CloudFront
+                                </li>
                             </ul>
                         </li>
                     </ul>
