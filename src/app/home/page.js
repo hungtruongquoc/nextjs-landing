@@ -73,7 +73,7 @@ export default function IndexPage() {
                             <ul>
                                 <li>Runtime: NodeJS</li>
                                 <li>Frontend: NextJS, Tailwind CSS</li>
-                                <li>Containerization: Docker</li>
+                                <li>Containerization: Docker, Railway</li>
                             </ul>
                         </li>
                         <li className="my-5">
@@ -93,7 +93,7 @@ export default function IndexPage() {
                             <ul>
                                 <li>Runtime: NodeJS</li>
                                 <li>Frontend: Angular 18, Server Side Rendering, NgRx Store, RxJS, Ant Design</li>
-                                <li>Containerization: Docker</li>
+                                <li>Containerization: Docker, Railway</li>
                             </ul>
                         </li>
                         <li className="my-5">
@@ -120,7 +120,7 @@ export default function IndexPage() {
                                 <li>Runtime: Python</li>
                                 <li>Framework: FastAPI</li>
                                 <li>Cloud service: FireBase, FireStore</li>
-                                <li>Containerization: Docker</li>
+                                <li>Containerization: Docker, Railway</li>
                             </ul>
                         </li>
                         <li className="my-5">
@@ -158,7 +158,7 @@ export default function IndexPage() {
                                 <li>
                                     Cloud service: Amplify, Elastic Beanstalk, CodePipeline, CodeBuild, S3, CloudFront
                                 </li>
-                                <li>Containerization: Docker</li>
+                                <li>Containerization: Docker, Railway</li>
                             </ul>
                         </li>
                     </ul>
