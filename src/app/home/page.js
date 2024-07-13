@@ -163,7 +163,7 @@ export default function IndexPage() {
                             <ul>
                                 <li>Runtime: Python, NodeJS</li>
                                 <li>Database: SQLite 3</li>
-                                <li>Framework: Django (Django Rest Framework), ReactJS</li>
+                                <li>Framework: Django (Django Rest Framework), ReactJS, ExpressJS</li>
                                 <li>
                                     Cloud service: Amplify, Elastic Beanstalk, CodePipeline, CodeBuild, S3, CloudFront
                                 </li>
