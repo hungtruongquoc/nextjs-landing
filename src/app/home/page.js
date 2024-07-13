@@ -119,19 +119,23 @@ export default function IndexPage() {
                             </ul>
                         </li>
                         <li className="my-5">
-                            <a className="font-black" href="https://github.com/hungtruongquoc/react-amplify"
-                               target="_blank">
-                                A React Amplify demo <FontAwesomeIcon
-                                icon={faArrowUpRightFromSquare}/>
-                            </a>
+                            <h1 className="font-black">
+                                A React Amplify, Django demo
+                            </h1>
                             <p>
-                                <a href="https://react-amplify.htruong83.com/" target="_blank">
+                                <a className="mx-5" href="https://react-amplify.htruong83.com/" target="_blank">
                                     Demo front end application <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                </a>
+                                <a href="https://github.com/hungtruongquoc/react-amplify" target="_blank">
+                                    View Code<FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
                                 </a>
                             </p>
                             <p>
-                                <a href="http://django-demo.htruong83.com/" target="_blank">
-                                    Demo Django application <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                <a className="mx-5" href="http://django-demo.htruong83.com/" target="_blank">
+                                    Demo Django API Doc <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                </a>
+                                <a href="https://github.com/hungtruongquoc/django-ec2" target="_blank">
+                                    View Code<FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
                                 </a>
                             </p>
                             <p className="font-bold">
@@ -139,8 +143,8 @@ export default function IndexPage() {
                             </p>
                             <ul>
                                 <li>Runtime: Python, NodeJS</li>
-                                <li>Framework: Django, ReactJS</li>
-                                <li>Cloud service: Amplify, Elastic Beanstalk, CodePipeline, CodeBuild</li>
+                                <li>Framework: Django (Django Rest Framework), ReactJS</li>
+                                <li>Cloud service: Amplify, Elastic Beanstalk, CodePipeline, CodeBuild, S3, CloudFront</li>
                             </ul>
                         </li>
                     </ul>
