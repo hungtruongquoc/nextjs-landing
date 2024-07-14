@@ -16,7 +16,7 @@ export default function ProjectPage() {
             />
             <h2 className="text-2xl font-bold">Entity Relationship Diagram</h2>
             <Image
-                src="/ERD For Demo Program.png.png"
+                src="/ERD For Demo Program.png"
                 width={900}
                 height={500}
                 alt="Picture of the author"
