@@ -15,8 +15,8 @@ export default function IndexPage() {
     const projectList = getProjectList();
 
     return (
-        <>
-            <IntroductionItem title="Introduction">
+        <div className="container mx-auto">
+            <IntroductionItem title="Introduction" id="introduction">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
                     <p className="px-10 text-justify">
                         As an innovative Senior Full Stack Developer and Technical Leader with over a decade of
@@ -57,7 +57,7 @@ export default function IndexPage() {
                 </div>
             </IntroductionItem>
             <div className="grid grid-cols-1 md:grid-cols-2">
-                <IntroductionItem title="Soure Code Links">
+                <IntroductionItem title="Soure Code Links" id="source-code">
                     <ul className="pt-5 px-10 flex-col flex-nowrap gap-5">
                         <li className="my-5">
                             <span className="font-bold">This landing page was developed with NextJS, Tailwind CSS</span> <a className="font-black"
@@ -172,7 +172,7 @@ export default function IndexPage() {
                         </li>
                     </ul>
                 </IntroductionItem>
-                <IntroductionItem title="Honorable Projects">
+                <IntroductionItem title="Honorable Projects" id="projects">
                     <ul className="pt-5 px-10">
                         <li>
                             <a className="text-amber-400" href="https://beetrack.io/home-en/"
@@ -215,6 +215,6 @@ export default function IndexPage() {
                     </ul>
                 </IntroductionItem>
             </div>
-        </>
+        </div>
     )
 }
