@@ -4,14 +4,16 @@ import {faHome} from "@fortawesome/pro-solid-svg-icons";
 export default function ProjectLayout({children}) {
     return (
         <>
-            <ul>
-                <li>
+            <ul className="fixed top-0 left-0 w-full bg-white shadow-md z-10 p-4">
+                <li className="container mx-auto">
                     <Link href="/" className="text-blue-950">
-                        <FontAwesomeIcon icon={faHome}/> Home
+                        <FontAwesomeIcon icon={faHome}/> <span className="font-bold">Home</span>
                     </Link>
                 </li>
             </ul>
-            {children}
+            <div className="mt-16">
+                {children}
+            </div>
         </>
-)
+    )
 }

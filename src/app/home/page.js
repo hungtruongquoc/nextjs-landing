@@ -2,14 +2,13 @@ import Image from 'next/image'
 import HeadshotImage from '../../../public/1714499008926.jpeg'
 import IntroductionItem from "@/components/introduction_item";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faGithub} from "@fortawesome/free-brands-svg-icons/faGithub";
-import {faArrowUpRightFromSquare, faStar, faBook as faFileDoc, faBrowser} from "@fortawesome/pro-solid-svg-icons";
+import {faArrowUpRightFromSquare, faStar, faBook as faFileDoc, faBrowser, faMobile, faAt} from "@fortawesome/pro-solid-svg-icons";
 import CustomerList from "@/components/customer_list";
 import TechStackList from "@/components/techstack_list";
 import {getCustomerList} from "@/libs/customer";
 import {getProjectList} from "@/libs/projects";
 import Link from "next/link";
-import {faGithubSquare} from "@fortawesome/free-brands-svg-icons";
+import {faGithubSquare, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 
 export default function IndexPage() {
     const customerList = getCustomerList();
@@ -18,7 +17,7 @@ export default function IndexPage() {
     return (
         <>
             <IntroductionItem title="Introduction">
-                <div className="columns-2 pt-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
                     <p className="px-10 text-justify">
                         As an innovative Senior Full Stack Developer and Technical Leader with over a decade of
                         experience
@@ -34,7 +33,7 @@ export default function IndexPage() {
                         solve
                         critical business challenges and propel organizational growth.
                     </p>
-                    <div>
+                    <div className="flex flex-col items-center justify-center px-10">
                         <Image
                             src={HeadshotImage}
                             width="200"
@@ -44,26 +43,24 @@ export default function IndexPage() {
                         <ul>
                             <span className="font-bold text-2xl">Contact Info</span>
                             <li>
-                                <span className="font-bold">Email: </span><span>hungtruongquoc@gmail.com</span>
+                                <span className="font-bold"><FontAwesomeIcon fixedWidth icon={faAt}/> </span><span>hungtruongquoc@gmail.com</span>
                             </li>
                             <li>
-                                <span className="font-bold">Mobile: </span><span>574-386-3696</span>
+                                <span className="font-bold"><FontAwesomeIcon fixedWidth icon={faMobile}/> </span><span>574-386-3696</span>
                             </li>
                             <li>
-                                <span className="font-bold">LinkedIn: </span><a
-                                href="https://www.linkedin.com/in/htruong83/" target="_blank">htruong83 <FontAwesomeIcon
-                                icon={faArrowUpRightFromSquare}/></a>
+                                <span className="font-bold"><FontAwesomeIcon fixedWidth icon={faLinkedin}/> </span> <a
+                                href="https://www.linkedin.com/in/htruong83/" target="_blank">htruong83</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </IntroductionItem>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2">
                 <IntroductionItem title="Soure Code Links">
                     <ul className="pt-5 px-10 flex-col flex-nowrap gap-5">
-                        <span className="text-2xl my-5"><FontAwesomeIcon icon={faGithub}/> Github</span>
                         <li className="my-5">
-                            This landing page was developed with NextJS, Tailwind CSS <a className="font-black"
+                            <span className="font-bold">This landing page was developed with NextJS, Tailwind CSS</span> <a className="font-black"
                                                                                          href="https://github.com/hungtruongquoc/nextjs-landing"
                                                                                          target="_blank">
                             <FontAwesomeIcon icon={faGithubSquare}/>
@@ -78,7 +75,7 @@ export default function IndexPage() {
                             </ul>
                         </li>
                         <li className="my-5">
-                            An Angular App showing list of assets <a className="font-black"
+                            <span className="font-bold">An Angular App showing list of assets</span> <a className="font-black"
                                                                      href="https://github.com/hungtruongquoc/angular-asset-list"
                                                                      target="_blank">
                             <FontAwesomeIcon
@@ -99,7 +96,7 @@ export default function IndexPage() {
                             </ul>
                         </li>
                         <li className="my-5">
-                            A FastAPI demo <a className="font-black"
+                            <span className="font-bold">A FastAPI demo</span> <a className="font-black"
                                               href="https://github.com/hungtruongquoc/fast-api-demo"
                                               target="_blank">
                             <FontAwesomeIcon icon={faGithubSquare}/>
@@ -155,7 +152,7 @@ export default function IndexPage() {
                             </p>
                             <p className="font-bold">
                                 <Link className="text-blue-950" href="/projects/1">
-                                    <FontAwesomeIcon icon={faFileDoc}/> Documentation
+                                    Documentation <FontAwesomeIcon icon={faFileDoc}/>
                                 </Link>
                             </p>
 
