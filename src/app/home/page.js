@@ -3,7 +3,7 @@ import HeadshotImage from '../../../public/1714499008926.jpeg'
 import IntroductionItem from "@/components/introduction_item";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub} from "@fortawesome/free-brands-svg-icons/faGithub";
-import {faArrowUpRightFromSquare, faStar, faBook as faFileDoc} from "@fortawesome/pro-solid-svg-icons";
+import {faArrowUpRightFromSquare, faStar, faBook as faFileDoc, faBrowser} from "@fortawesome/pro-solid-svg-icons";
 import CustomerList from "@/components/customer_list";
 import TechStackList from "@/components/techstack_list";
 import {getCustomerList} from "@/libs/customer";
@@ -63,11 +63,11 @@ export default function IndexPage() {
                     <ul className="pt-5 px-10 flex-col flex-nowrap gap-5">
                         <span className="text-2xl my-5"><FontAwesomeIcon icon={faGithub}/> Github</span>
                         <li className="my-5">
-                            <a className="font-black" href="https://github.com/hungtruongquoc/nextjs-landing"
-                               target="_blank">
-                                This landing page was developed with NextJS, Tailwind CSS <FontAwesomeIcon
-                                icon={faArrowUpRightFromSquare}/>
-                            </a>
+                            This landing page was developed with NextJS, Tailwind CSS <a className="font-black"
+                                                                                         href="https://github.com/hungtruongquoc/nextjs-landing"
+                                                                                         target="_blank">
+                            <FontAwesomeIcon icon={faGithubSquare}/>
+                        </a>
                             <p className="font-bold">
                                 Tech Stack
                             </p>
@@ -78,15 +78,16 @@ export default function IndexPage() {
                             </ul>
                         </li>
                         <li className="my-5">
-                            <a className="font-black" href="https://github.com/hungtruongquoc/angular-asset-list"
-                               target="_blank">
-                                An Angular App showing list of assets <FontAwesomeIcon
-                                icon={faArrowUpRightFromSquare}/>
-                            </a>
+                            An Angular App showing list of assets <a className="font-black"
+                                                                     href="https://github.com/hungtruongquoc/angular-asset-list"
+                                                                     target="_blank">
+                            <FontAwesomeIcon
+                                icon={faGithubSquare}/>
+                        </a>
                             <p>
-                                <a href="https://angular.htruong83.com/" target="_blank">
-                                    Demo application <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
-                                </a>
+                                Demo application <a href="https://angular.htruong83.com/" target="_blank">
+                                <FontAwesomeIcon icon={faBrowser}/>
+                            </a>
                             </p>
                             <p className="font-bold">
                                 Tech Stack
@@ -98,21 +99,21 @@ export default function IndexPage() {
                             </ul>
                         </li>
                         <li className="my-5">
-                            <a className="font-black" href="https://github.com/hungtruongquoc/fast-api-demo"
-                               target="_blank">
-                                A FastAPI demo <FontAwesomeIcon
-                                icon={faArrowUpRightFromSquare}/>
-                            </a>
+                            A FastAPI demo <a className="font-black"
+                                              href="https://github.com/hungtruongquoc/fast-api-demo"
+                                              target="_blank">
+                            <FontAwesomeIcon icon={faGithubSquare}/>
+                        </a>
                             <p>
-                                <a href="https://fast-api.htruong83.com/api/v1" target="_blank">
-                                    Demo API v1 <FontAwesomeIcon icon={faArrowUpRightFromSquare}/> (Please contact me
-                                    for API Key)
-                                </a>
+                                Demo API v1 (Please contact me for API Key) <a
+                                href="https://fast-api.htruong83.com/api/v1" target="_blank">
+                                <FontAwesomeIcon icon={faBrowser}/>
+                            </a>
                             </p>
                             <p>
-                                <a href="https://fast-api.htruong83.com/docs" target="_blank">
-                                    OpenAPI Doc <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
-                                </a>
+                                OpenAPI Doc <a href="https://fast-api.htruong83.com/docs" target="_blank">
+                                <FontAwesomeIcon icon={faBrowser}/>
+                            </a>
                             </p>
                             <p className="font-bold">
                                 Tech Stack
@@ -128,29 +129,29 @@ export default function IndexPage() {
                             <h1 className="font-black">
                                 A React Amplify, Django demo
                             </h1>
-                            <p>
-                                <a className="mx-5" href="https://react-amplify.htruong83.com/" target="_blank">
-                                    Demo front end application <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
-                                </a>
-                                <a href="https://github.com/hungtruongquoc/react-amplify" target="_blank">
-                                    <FontAwesomeIcon icon={faGithubSquare}/>
-                                </a>
+                            <p className="mx-5">
+                                Demo front end application <a href="https://react-amplify.htruong83.com/"
+                                                              target="_blank">
+                                <FontAwesomeIcon icon={faBrowser}/>
+                            </a> <a href="https://github.com/hungtruongquoc/react-amplify" target="_blank">
+                                <FontAwesomeIcon icon={faGithubSquare}/>
+                            </a>
                             </p>
-                            <p>
-                                <a className="mx-5" href="http://django-demo.htruong83.com/" target="_blank">
-                                    Demo Django API Doc <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
-                                </a>
-                                <a href="https://github.com/hungtruongquoc/django-ec2" target="_blank">
-                                    <FontAwesomeIcon icon={faGithubSquare}/>
-                                </a>
+                            <p className="mx-5">
+                                Demo Django API Doc <a href="http://django-demo.htruong83.com/" target="_blank">
+                                <FontAwesomeIcon icon={faBrowser}/>
+                            </a> <a href="https://github.com/hungtruongquoc/django-ec2" target="_blank">
+                                <FontAwesomeIcon icon={faGithubSquare}/>
+                            </a>
                             </p>
-                            <p>
-                                <a className="mx-5" href="https://django-api-proxy.htruong83.com/swagger/" target="_blank">
-                                    NodeJS Proxy for HTTP REST API <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
-                                </a>
-                                <a className="mx-5" href="https://github.com/hungtruongquoc/express-passthrough-django-demo" target="_blank">
-                                    <FontAwesomeIcon icon={faGithubSquare}/>
-                                </a>
+                            <p className="mx-5">
+                                NodeJS Proxy for HTTP REST API <a href="https://django-api-proxy.htruong83.com/swagger/"
+                                                                  target="_blank">
+                                <FontAwesomeIcon icon={faBrowser}/>
+                            </a> <a href="https://github.com/hungtruongquoc/express-passthrough-django-demo"
+                                    target="_blank">
+                                <FontAwesomeIcon icon={faGithubSquare}/>
+                            </a>
                             </p>
                             <p className="font-bold">
                                 <Link className="text-blue-950" href="/projects/1">
