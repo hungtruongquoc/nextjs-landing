@@ -9,7 +9,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "start": "next start -p $PORT",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap --config ./next-sitemap.config.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
