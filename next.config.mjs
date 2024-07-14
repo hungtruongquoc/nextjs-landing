@@ -11,4 +11,4 @@ const nextConfig = {
     },
 };
 
-export default withSitemap(sitemapConfig)(nextConfig);
+export default nextConfig;
