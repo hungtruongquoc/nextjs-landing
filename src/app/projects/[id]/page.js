@@ -21,7 +21,7 @@ export default function DocumentPage({ id }) {
             <h1 className="text-4xl font-black">{document.title}</h1>
             {document.docs.map((doc, index) => (
                 <div key={index}>
-                    <h2 className="text-2xl font-bold">{section.doc}</h2>
+                    <h2 className="text-2xl font-bold">{doc.title}</h2>
                     <Image
                         src={doc.imageUrl}
                         alt={doc.imageAlt}
