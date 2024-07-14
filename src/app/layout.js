@@ -3,6 +3,7 @@ import "./globals.css";
 // Following lines are needed to prevent the big icon size by default
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import {config} from '@fortawesome/fontawesome-svg-core';
+import GoogleAnalytics from "../components/google_analytics";
 
 config.autoAddCss = false; /* eslint-disable import/first */
 
@@ -16,6 +17,7 @@ export const metadata = {
 export default function RootLayout({children}) {
     return (
         <html lang="en">
+        <GoogleAnalytics/>
         <body className={inter.className}>
             {children}
         </body>
