@@ -64,5 +64,5 @@ RUN pnpm install --prod
 EXPOSE 8080
 
 # Start the Next.js application on port 8080
-ENV PORT 8080
+ENV PORT=8080
 CMD ["pnpm", "start"]

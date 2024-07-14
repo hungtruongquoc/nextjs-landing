@@ -11,7 +11,7 @@ export default function ProjectLayout({children}) {
                     </Link>
                 </li>
             </ul>
-            <div className="mt-16">
+            <div className="mt-16 container mx-auto">
                 {children}
             </div>
         </>
