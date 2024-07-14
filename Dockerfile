@@ -3,10 +3,10 @@ FROM node:18-alpine AS builder
 
 # Add a build argument for the environment variable
 ARG FONTAWESOME_PACKAGE_TOKEN
-
+ARG NEXT_PUBLIC_MEASUREMENT_ID
 # Export the environment variable
 ENV FONTAWESOME_PACKAGE_TOKEN=$FONTAWESOME_PACKAGE_TOKEN
-
+ENV NEXT_PUBLIC_MEASUREMENT_ID=$NEXT_PUBLIC_MEASUREMENT_ID
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -36,7 +36,7 @@ RUN pnpm build
 FROM node:18-alpine AS runner
 # Add a build argument for the environment variable
 ARG FONTAWESOME_PACKAGE_TOKEN
-
+ARG NEXT_PUBLIC_MEASUREMENT_ID
 # Install pnpm
 RUN npm install -g pnpm
 
@@ -44,6 +44,7 @@ RUN npm install -g pnpm
 ENV NODE_ENV=production
 # Export the environment variable
 ENV FONTAWESOME_PACKAGE_TOKEN=$FONTAWESOME_PACKAGE_TOKEN
+ENV NEXT_PUBLIC_MEASUREMENT_ID=$NEXT_PUBLIC_MEASUREMENT_ID
 # Set the working directory inside the container
 WORKDIR /app
 
