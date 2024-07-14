@@ -9,6 +9,7 @@ import TechStackList from "@/components/techstack_list";
 import {getCustomerList} from "@/libs/customer";
 import {getProjectList} from "@/libs/projects";
 import Link from "next/link";
+import {faGithubSquare} from "@fortawesome/free-brands-svg-icons";
 
 export default function IndexPage() {
     const customerList = getCustomerList();
@@ -132,7 +133,7 @@ export default function IndexPage() {
                                     Demo front end application <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
                                 </a>
                                 <a href="https://github.com/hungtruongquoc/react-amplify" target="_blank">
-                                    View Code<FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                    <FontAwesomeIcon icon={faGithubSquare}/>
                                 </a>
                             </p>
                             <p>
@@ -140,7 +141,7 @@ export default function IndexPage() {
                                     Demo Django API Doc <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
                                 </a>
                                 <a href="https://github.com/hungtruongquoc/django-ec2" target="_blank">
-                                    View Code<FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                    <FontAwesomeIcon icon={faGithubSquare}/>
                                 </a>
                             </p>
                             <p>
@@ -148,7 +149,7 @@ export default function IndexPage() {
                                     NodeJS Proxy for HTTP REST API <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
                                 </a>
                                 <a className="mx-5" href="https://github.com/hungtruongquoc/express-passthrough-django-demo" target="_blank">
-                                    View Code <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+                                    <FontAwesomeIcon icon={faGithubSquare}/>
                                 </a>
                             </p>
                             <p className="font-bold">
