@@ -15,7 +15,7 @@ export default function IndexPage() {
     const projectList = getProjectList();
 
     return (
-        <div className="container mx-auto">
+        <>
             <IntroductionItem title="Introduction" id="introduction">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
                     <p className="px-10 text-justify">
@@ -61,8 +61,8 @@ export default function IndexPage() {
                     <ul className="pt-5 px-10 flex-col flex-nowrap gap-5">
                         <li className="my-5">
                             <span className="font-bold">This landing page was developed with NextJS, Tailwind CSS</span> <a className="font-black"
-                                                                                         href="https://github.com/hungtruongquoc/nextjs-landing"
-                                                                                         target="_blank">
+                                                                                                                            href="https://github.com/hungtruongquoc/nextjs-landing"
+                                                                                                                            target="_blank">
                             <FontAwesomeIcon icon={faGithubSquare}/>
                         </a>
                             <p className="font-bold">
@@ -76,8 +76,8 @@ export default function IndexPage() {
                         </li>
                         <li className="my-5">
                             <span className="font-bold">An Angular App showing list of assets</span> <a className="font-black"
-                                                                     href="https://github.com/hungtruongquoc/angular-asset-list"
-                                                                     target="_blank">
+                                                                                                        href="https://github.com/hungtruongquoc/angular-asset-list"
+                                                                                                        target="_blank">
                             <FontAwesomeIcon
                                 icon={faGithubSquare}/>
                         </a>
@@ -97,8 +97,8 @@ export default function IndexPage() {
                         </li>
                         <li className="my-5">
                             <span className="font-bold">A FastAPI demo</span> <a className="font-black"
-                                              href="https://github.com/hungtruongquoc/fast-api-demo"
-                                              target="_blank">
+                                                                                 href="https://github.com/hungtruongquoc/fast-api-demo"
+                                                                                 target="_blank">
                             <FontAwesomeIcon icon={faGithubSquare}/>
                         </a>
                             <p>
@@ -215,6 +215,6 @@ export default function IndexPage() {
                     </ul>
                 </IntroductionItem>
             </div>
-        </div>
+        </>
     )
 }

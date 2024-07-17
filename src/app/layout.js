@@ -4,6 +4,10 @@ import "./globals.css";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import {config} from '@fortawesome/fontawesome-svg-core';
 import GoogleAnalytics from "../components/google_analytics";
+import dynamic from "next/dynamic";
+
+// Dynamically import the client component
+const NavigationComponent = dynamic(() => import('../components/navigation_component'), {ssr: false});
 
 config.autoAddCss = false; /* eslint-disable import/first */
 
@@ -23,8 +27,13 @@ export default function RootLayout({children}) {
         <html lang="en">
         <GoogleAnalytics/>
         <body className={inter.className}>
-            {children}
+        <NavigationComponent/>
+        <div className="pt-16">
+            <div className="container mx-auto">
+                {children}
+            </div>
+        </div>
         </body>
         </html>
-    );
+);
 }
