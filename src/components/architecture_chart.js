@@ -79,6 +79,33 @@ const ArchitectureChart = () => {
                 ].join(' ');
             })
             .attr('fill', 'black');
+        // Animate the borders
+        const animateBorders = async () => {
+            for (let i = 0; i < nodes.length; i++) {
+                svg.selectAll('rect')
+                    .attr('stroke', (d, j) => j === i ? 'blue' : 'black')
+                    .attr('stroke-width', (d, j) => j === i ? 4 : 2);
+                // Wait .5 second. This determines the speed of the animation
+                await new Promise(resolve => setTimeout(resolve, 500));
+            }
+
+            // Reset to original state
+            svg.selectAll('rect')
+                .attr('stroke', 'black')
+                .attr('stroke-width', 2);
+        };
+
+        // Start the animation immediately
+        animateBorders();
+
+        // Use setInterval to loop the animation
+        const intervalId = setInterval(() => {
+            animateBorders();
+        }, 3000); // Adjust the interval as needed
+
+        // Clear the interval on component unmount
+        return () => clearInterval(intervalId);
+
     }, []);
 
     return <svg ref={svgRef}></svg>;
