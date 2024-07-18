@@ -32,6 +32,10 @@ export default function NavigationComponent() {
                                 <span
                                     className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-blue-700">Knowledge</span>
                             </Link>
+                            <Link href="/architecture">
+                                <span
+                                    className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-blue-700">Architecture</span>
+                            </Link>
                         </div>
                     </div>
                 </div>

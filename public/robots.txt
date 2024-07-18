@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.htruong83.com/home
+
+# Sitemaps
+Sitemap: https://www.htruong83.com/home/sitemap.xml
