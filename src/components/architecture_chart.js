@@ -1,8 +1,19 @@
 // components/D3Diagram.js
 'use client'
 
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
+import {addAnimationText} from "@/libs/d3_utils";
+import _ from 'lodash';
+
+const nodeTexts = {
+    KongAPI: ['Routes request', 'to services'],
+    FastAPI: ['Processes requests', 'for FastAPI service'],
+    Proxy: ['Processes requests', 'for Proxy service'],
+    Client1: ['Sends requests']
+}
+
+const highlightedColor = 'blue';
 
 const ArchitectureChart = () => {
     const svgRef = useRef();
@@ -13,20 +24,20 @@ const ArchitectureChart = () => {
             .attr('height', 400);
 
         const nodes = [
-            { id: 'Client1', x: 50, y: 150, label: 'Client' },
-            { id: 'KongAPI', x: 300, y: 150, label: 'Kong API Gateway' },
-            { id: 'FastAPI', x: 550, y: 50, label: 'FastAPI Service' },
-            { id: 'Proxy', x: 550, y: 250, label: 'Proxy Service' },
-            { id: 'Client2', x: 800, y: 150, label: 'Client' },
+            {id: 'Client1', x: 50, y: 150, label: 'Client', color: 'black'},
+            {id: 'KongAPI', x: 300, y: 150, label: 'Kong API Gateway', color: 'green'},
+            {id: 'FastAPI', x: 550, y: 50, label: 'FastAPI Service', color: 'maroon'},
+            {id: 'Proxy', x: 550, y: 250, label: 'Proxy Service', color: 'violet'},
+            {id: 'Client2', x: 800, y: 150, label: 'Client', color: 'black'},
         ];
 
         const links = [
-            { source: 'Client1', target: 'KongAPI', type: 'Request Type 1' },
-            { source: 'KongAPI', target: 'FastAPI', type: 'Forward to FastAPI Service' },
-            { source: 'FastAPI', target: 'Client2', type: 'Response from FastAPI Service' },
-            { source: 'Client1', target: 'KongAPI', type: 'Request Type 2' },
-            { source: 'KongAPI', target: 'Proxy', type: 'Forward to Proxy Service' },
-            { source: 'Proxy', target: 'Client2', type: 'Response from Proxy Service' },
+            {source: 'Client1', target: 'KongAPI', type: 'Request Type 1'},
+            {source: 'KongAPI', target: 'FastAPI', type: 'Forward to FastAPI Service'},
+            {source: 'FastAPI', target: 'Client2', type: 'Response from FastAPI Service'},
+            {source: 'Client1', target: 'KongAPI', type: 'Request Type 2'},
+            {source: 'KongAPI', target: 'Proxy', type: 'Forward to Proxy Service'},
+            {source: 'Proxy', target: 'Client2', type: 'Response from Proxy Service'},
         ];
 
         // Draw nodes
@@ -40,7 +51,8 @@ const ArchitectureChart = () => {
             .attr('width', 200)
             .attr('height', 100)
             .attr('fill', 'white')
-            .attr('stroke', 'black');
+            .attr('stroke-width', 4)
+            .attr('stroke', d => d.color || 'black');
 
         svg.selectAll('.label')
             .data(nodes)
@@ -79,29 +91,52 @@ const ArchitectureChart = () => {
                 ].join(' ');
             })
             .attr('fill', 'black');
+
+        // Add animation text
+        // Add animation texts
+        let animationTexts = new Map();
+        Object.entries(nodeTexts).forEach(([nodeId, textLines]) => {
+            animationTexts.set(nodeId, addAnimationText(svg, nodes, nodeId, textLines));
+        })
+
+        const waitingTimeInSec = 500;
+
+
         // Animate the borders
-        const animateBorders = async () => {
+        const animateBorders = async (perElementWait) => {
+
             for (let i = 0; i < nodes.length; i++) {
                 svg.selectAll('rect')
-                    .attr('stroke', (d, j) => j === i ? 'blue' : 'black')
+                    .attr('stroke', (d, j) => j === i ? highlightedColor : nodes[j].color)
                     .attr('stroke-width', (d, j) => j === i ? 4 : 2);
+
+                for (const [id, element] of animationTexts) {
+                    if (nodes[i].id === id) {
+                        element.style('visibility', 'visible');
+                    } else {
+                        element.style('visibility', 'hidden');
+                    }
+                }
                 // Wait .5 second. This determines the speed of the animation
-                await new Promise(resolve => setTimeout(resolve, 500));
+                await new Promise(resolve => setTimeout(resolve, perElementWait));
             }
 
             // Reset to original state
             svg.selectAll('rect')
-                .attr('stroke', 'black')
+                .attr('stroke', d => d.color)
                 .attr('stroke-width', 2);
         };
 
+        // Create a partially applied version of animateBorders
+        const animateWithWaitTime = _.partial(animateBorders, waitingTimeInSec);
+
         // Start the animation immediately
-        animateBorders();
+        animateWithWaitTime();
 
         // Use setInterval to loop the animation
         const intervalId = setInterval(() => {
-            animateBorders();
-        }, 3000); // Adjust the interval as needed
+            animateWithWaitTime();
+        }, waitingTimeInSec * nodes.length); // Adjust the interval as needed
 
         // Clear the interval on component unmount
         return () => clearInterval(intervalId);

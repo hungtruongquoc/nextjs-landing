@@ -36,7 +36,12 @@ export default function NavigationComponent() {
                         </Link>
                     </div>
                     <div className="block md:hidden">
-                        <button onClick={toggleMenu} className="text-white focus:outline-none">
+                        <button
+                            onClick={toggleMenu}
+                            className="text-white focus:outline-none"
+                            aria-label={menuOpen ? "Close menu" : "Open menu"}
+                            aria-expanded={menuOpen}
+                        >
                             <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} size="lg"/>
                         </button>
                     </div>
