@@ -7,13 +7,17 @@ import {addAnimationText} from "@/libs/d3_utils";
 import _ from 'lodash';
 
 const nodeTexts = {
-    KongAPI: ['Routes request', 'to services'],
-    FastAPI: ['Processes requests', 'for FastAPI service'],
-    Proxy: ['Processes requests', 'for Proxy service'],
-    Client1: ['Sends requests']
+    KongAPI: {highlightedTexts: ['Routes request', 'to services'], label: 'Kong API Gateway'},
+    FastAPI: {highlightedTexts: ['Processes requests', 'for FastAPI service'], label: 'FastAPI Service'},
+    Proxy: {highlightedTexts: ['Processes requests', 'for Proxy service'], label: 'Proxy Service'},
+    Client1: {highlightedTexts: ['Sends request'], label: 'Client'},
+    Client2: {label: 'Client'}
 }
 
 const highlightedColor = 'blue';
+const defaultStrokeWidth = 4;
+const highlightedStrokeWidth = 8;
+const defaultStrokeColor = 'black';
 
 const ArchitectureChart = () => {
     const svgRef = useRef();
@@ -24,11 +28,11 @@ const ArchitectureChart = () => {
             .attr('height', 400);
 
         const nodes = [
-            {id: 'Client1', x: 50, y: 150, label: 'Client', color: 'black'},
-            {id: 'KongAPI', x: 300, y: 150, label: 'Kong API Gateway', color: 'green'},
-            {id: 'FastAPI', x: 550, y: 50, label: 'FastAPI Service', color: 'maroon'},
-            {id: 'Proxy', x: 550, y: 250, label: 'Proxy Service', color: 'violet'},
-            {id: 'Client2', x: 800, y: 150, label: 'Client', color: 'black'},
+            {id: 'Client1', x: 50, y: 150, label: nodeTexts['Client1'].label},
+            {id: 'KongAPI', x: 300, y: 150, label: nodeTexts['KongAPI'].label, color: 'green'},
+            {id: 'FastAPI', x: 550, y: 50, label: nodeTexts['FastAPI'].label, color: 'maroon'},
+            {id: 'Proxy', x: 550, y: 250, label: nodeTexts['Proxy'].label, color: 'violet'},
+            {id: 'Client2', x: 800, y: 150, label: nodeTexts['Client2'].label},
         ];
 
         const links = [
@@ -52,7 +56,7 @@ const ArchitectureChart = () => {
             .attr('height', 100)
             .attr('fill', 'white')
             .attr('stroke-width', 4)
-            .attr('stroke', d => d.color || 'black');
+            .attr('stroke', d => d.color || defaultStrokeColor);
 
         svg.selectAll('.label')
             .data(nodes)
@@ -92,11 +96,10 @@ const ArchitectureChart = () => {
             })
             .attr('fill', 'black');
 
-        // Add animation text
         // Add animation texts
         let animationTexts = new Map();
-        Object.entries(nodeTexts).forEach(([nodeId, textLines]) => {
-            animationTexts.set(nodeId, addAnimationText(svg, nodes, nodeId, textLines));
+        Object.entries(nodeTexts).forEach(([nodeId, data]) => {
+            animationTexts.set(nodeId, addAnimationText(svg, nodes, nodeId, data.highlightedTexts ? data.highlightedTexts : []));
         })
 
         const waitingTimeInSec = 500;
@@ -107,8 +110,8 @@ const ArchitectureChart = () => {
 
             for (let i = 0; i < nodes.length; i++) {
                 svg.selectAll('rect')
-                    .attr('stroke', (d, j) => j === i ? highlightedColor : nodes[j].color)
-                    .attr('stroke-width', (d, j) => j === i ? 8 : 4);
+                    .attr('stroke', (box, j) => j === i ? highlightedColor : (box.color || defaultStrokeColor))
+                    .attr('stroke-width', (d, j) => j === i ? highlightedStrokeWidth : defaultStrokeWidth);
 
                 for (const [id, element] of animationTexts) {
                     if (nodes[i].id === id) {
@@ -123,8 +126,8 @@ const ArchitectureChart = () => {
 
             // Reset to original state
             svg.selectAll('rect')
-                .attr('stroke', d => d.color)
-                .attr('stroke-width', 4);
+                .attr('stroke', d => d.color || defaultStrokeColor)
+                .attr('stroke-width', defaultStrokeWidth);
         };
 
         // Create a partially applied version of animateBorders
