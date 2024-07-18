@@ -108,7 +108,7 @@ const ArchitectureChart = () => {
             for (let i = 0; i < nodes.length; i++) {
                 svg.selectAll('rect')
                     .attr('stroke', (d, j) => j === i ? highlightedColor : nodes[j].color)
-                    .attr('stroke-width', (d, j) => j === i ? 4 : 2);
+                    .attr('stroke-width', (d, j) => j === i ? 8 : 4);
 
                 for (const [id, element] of animationTexts) {
                     if (nodes[i].id === id) {
@@ -124,7 +124,7 @@ const ArchitectureChart = () => {
             // Reset to original state
             svg.selectAll('rect')
                 .attr('stroke', d => d.color)
-                .attr('stroke-width', 2);
+                .attr('stroke-width', 4);
         };
 
         // Create a partially applied version of animateBorders
