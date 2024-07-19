@@ -29,7 +29,7 @@ export default function KnowledgePage() {
                     <h2 className="text-2xl font-bold py-5">{image.title}</h2>
                     <PhotoProvider>
                         <PhotoView src={image.src}>
-                            <Tooltip title="Click or tap to view" arrow followCursor>
+                            <Tooltip title="Click or tap to view" arrow followCursor placement="top">
                                 <Image
                                     src={image.src}
                                     alt="Data Analytics Infrastructure with AWS"
