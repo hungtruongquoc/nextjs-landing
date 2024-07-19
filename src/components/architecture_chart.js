@@ -21,7 +21,7 @@ const diagramConfig = {
         y: 50,
         color: 'maroon'
     },
-    Proxy: {
+        Proxy: {
         highlightedTexts: ['Processes requests', 'for Proxy service'],
         label: 'EB App in AWS',
         x: 550,

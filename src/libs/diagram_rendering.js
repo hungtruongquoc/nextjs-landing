@@ -34,7 +34,7 @@ export class Diagram {
 export class DiagramRenderer {
     constructor(svgElement, diagram) {
         this.svg = d3.select(svgElement)
-            .attr('viewBox', '0 0 1000 400')
+            .attr('viewBox', '0 0 1000 600')
             .attr('preserveAspectRatio', 'xMidYMid meet')
             .classed('svg-content-responsive', true);
 
@@ -47,7 +47,10 @@ export class DiagramRenderer {
             .lower(); // Ensure the rectangle is at the bottom layer
 
         this.diagram = diagram;
-        this.nodes = diagram.nodes;
+        this.nodes = diagram.nodes.map(node => ({
+            ...node,
+            y: node.y + 100  // Adjust the y-coordinate to center the diagram vertically
+        }));
         this.defaultStrokeColor = diagram.defaultStrokeColor;
         this.links = this.diagram.links;
     }

@@ -6,6 +6,7 @@ export class DiagramBoxHighlightAnimator {
         this.svgContainer = svgContainer;
         this.diagram = diagram;
         this.animationTexts = new Map();
+        this.runCounter = 0;
     }
 
     async animateBorders(nodes, perElementWait) {
@@ -20,12 +21,30 @@ export class DiagramBoxHighlightAnimator {
         const highlightedBoxes = this.svgContainer.selectAll('rect:not([data-background="true"])')
 
         for (let i = 0; i < nodes.length; i++) {
-            highlightedBoxes.attr('stroke', (box, j) => j === i ? highlightedColor : (box.color || defaultStrokeColor))
-                .attr('stroke-width', (d, j) => j === i ? highlightedStrokeWidth.toString() : defaultStrokeWidth.toString());
+            const node = nodes[i];
+            const excludeNode = (this.runCounter % 2 === 1 && node.id === "FastAPI")
+                || (this.runCounter % 2 === 0 && node.id === "Proxy");
 
+            highlightedBoxes.attr('stroke', (box, j) => {
+                if (excludeNode && node.id === box.id) {
+                    return (box.color || defaultStrokeColor);
+                }
+                return j === i ? highlightedColor : (box.color || defaultStrokeColor)
+            })
+                .attr('stroke-width', (d, j) => {
+                    if (excludeNode && node.id === d.id) {
+                        return defaultStrokeWidth.toString();
+                    }
+                    return j === i ? highlightedStrokeWidth.toString() : defaultStrokeWidth.toString()
+                });
+            
             for (const [id, element] of this.animationTexts) {
                 if (nodes[i].id === id) {
-                    element.style('visibility', 'visible');
+                    if (excludeNode && nodes[i].id === id) {
+                        element.style('visibility', 'hidden');
+                    } else {
+                        element.style('visibility', 'visible');
+                    }
                 } else {
                     element.style('visibility', 'hidden');
                 }
@@ -42,6 +61,7 @@ export class DiagramBoxHighlightAnimator {
         for (const element of this.animationTexts.values()) {
             element.style('visibility', 'hidden');
         }
+        this.runCounter++;
     }
 
     startAnimation(perElementWait) {
