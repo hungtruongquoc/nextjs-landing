@@ -4,48 +4,43 @@ import Image from "next/image";
 import {PhotoView, PhotoProvider} from 'react-photo-view';
 import Tooltip from '@mui/material/Tooltip';
 
+const knowledgeImages = [
+    {
+        src: '/DataAnalyticsInfrastructureWithAWS.png',
+        title: 'Data Analytics Infrastructure with AWS',
+        altTitle: 'Data Analytics Infrastructure with AWS',
+    },
+    {
+        src: '/Serverless.png',
+        title: 'Serverless Deployment with AWS',
+        altTitle: 'Serverless Deployment with AWS'
+    }, {
+        src: '/With EC2.png',
+        title: 'EC2 Deployment with AWS',
+        altTitle: 'EC2 Deployment with AWS'
+    },
+];
+
 export default function KnowledgePage() {
     return (
         <div className="flex flex-col gap-5 py-5">
-            <h2 className="text-2xl font-bold">Data Analytics System with AWS</h2>
-            <PhotoProvider>
-                <PhotoView src="/DataAnalyticsInfrastructureWithAWS.png">
-                    <Tooltip title="Click or tap to view" arrow>
-                        <Image
-                            src="/DataAnalyticsInfrastructureWithAWS.png"
-                            alt="Data Analytics Infrastructure with AWS"
-                            width={900}
-                            height={500}
-                        />
-                    </Tooltip>
-                </PhotoView>
-            </PhotoProvider>
-            <h2 className="text-2xl font-bold">Serverless Deployment with AWS</h2>
-            <PhotoProvider>
-                <PhotoView src="/Serverless.png">
-                    <Tooltip title="Click or tap to view" arrow>
-                        <Image
-                            src="/Serverless.png"
-                            alt="Serverless Deployment with AWS"
-                            width={900}
-                            height={500}
-                        />
-                    </Tooltip>
-                </PhotoView>
-            </PhotoProvider>
-            <h2 className="text-2xl font-bold">EC2 Deployment with AWS</h2>
-            <PhotoProvider>
-                <PhotoView src="/With EC2.png">
-                    <Tooltip title="Click or tap to view" arrow>
-                        <Image
-                            src="/With EC2.png"
-                            alt="EC2 Deployment with AWS"
-                            width={900}
-                            height={500}
-                        />
-                    </Tooltip>
-                </PhotoView>
-            </PhotoProvider>
+            {knowledgeImages.map((image, index) => (
+                <div key={index}>
+                    <h2 className="text-2xl font-bold py-5">{image.title}</h2>
+                    <PhotoProvider>
+                        <PhotoView src={image.src}>
+                            <Tooltip title="Click or tap to view" arrow followCursor>
+                                <Image
+                                    src={image.src}
+                                    alt="Data Analytics Infrastructure with AWS"
+                                    width={900}
+                                    height={500}
+                                />
+                            </Tooltip>
+                        </PhotoView>
+                    </PhotoProvider>
+                </div>
+            ))}
         </div>
     );
 }
