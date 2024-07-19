@@ -23,7 +23,7 @@ const diagramConfig = {
     },
     Proxy: {
         highlightedTexts: ['Processes requests', 'for Proxy service'],
-        label: 'Proxy Service',
+        label: 'Elastic Beanstalk App in AWS',
         x: 550,
         y: 250,
         color: 'violet'
