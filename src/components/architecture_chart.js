@@ -6,7 +6,7 @@ import {Diagram, DiagramRenderer} from "@/libs/diagram_rendering";
 import {DiagramBoxHighlightAnimator} from "@/libs/diagram_animator";
 
 const diagramConfig = {
-    Client1: {highlightedTexts: ['Sends request'], label: 'Client', x: 50, y: 150},
+    Client1: {highlightedTexts: ['Sends requests'], label: 'Client', x: 50, y: 150},
     KongAPI: {
         highlightedTexts: ['Routes request', 'to services'],
         label: 'Caddy API Gateway',
@@ -21,23 +21,31 @@ const diagramConfig = {
         y: 50,
         color: 'maroon'
     },
-        Proxy: {
+    Proxy: {
         highlightedTexts: ['Processes requests', 'for Proxy service'],
         label: 'EB App in AWS',
         x: 550,
         y: 250,
         color: 'violet'
     },
-    Client2: {label: 'Client', x: 800, y: 150}
+    KongAPI2: {
+        highlightedTexts: ['Routes responses', 'to client'],
+        label: 'Caddy API Gateway',
+        x: 800,
+        y: 150,
+        color: 'green'
+    },
+    Client2: {highlightedTexts: ['Receives responses'], label: 'Client', x: 1050, y: 150}
 }
 
 const links = [
     {source: 'Client1', target: 'KongAPI', type: 'Request Type 1'},
     {source: 'KongAPI', target: 'FastAPI', type: 'Forward to FastAPI Service'},
-    {source: 'FastAPI', target: 'Client2', type: 'Response from FastAPI Service'},
-    {source: 'Client1', target: 'KongAPI', type: 'Request Type 2'},
+    {source: 'FastAPI', target: 'KongAPI2', type: 'Response back from FastAPI Service'},
+    {source: 'KongAPI2', target: 'Client2', type: 'Response from FastAPI Service'},
     {source: 'KongAPI', target: 'Proxy', type: 'Forward to Proxy Service'},
-    {source: 'Proxy', target: 'Client2', type: 'Response from Proxy Service'},
+    {source: 'Proxy', target: 'KongAPI2', type: 'Response back from Proxy Service'},
+    {source: 'KongAPI2', target: 'Client2', type: 'Response from Proxy Service'},
 ];
 
 const ArchitectureChart = () => {
@@ -48,7 +56,7 @@ const ArchitectureChart = () => {
         const diagramRender = new DiagramRenderer(svgRef.current, diagram);
         diagramRender.render();
         const diagramAnimator = new DiagramBoxHighlightAnimator(diagramRender.svgElement, diagram);
-        diagramAnimator.startAnimation(500);
+        diagramAnimator.startAnimation(2000);
         return () => diagramAnimator.cleanup();
     }, [diagram]);
 
