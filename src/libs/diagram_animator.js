@@ -17,9 +17,10 @@ export class DiagramBoxHighlightAnimator {
             this.animationTexts.set(nodeId, addAnimationText(this.svgContainer, this.diagram.nodes, nodeId, textLines));
         });
 
+        const highlightedBoxes = this.svgContainer.selectAll('rect:not([data-background="true"])')
+
         for (let i = 0; i < nodes.length; i++) {
-            this.svgContainer.selectAll('rect')
-                .attr('stroke', (box, j) => j === i ? highlightedColor : (box.color || defaultStrokeColor))
+            highlightedBoxes.attr('stroke', (box, j) => j === i ? highlightedColor : (box.color || defaultStrokeColor))
                 .attr('stroke-width', (d, j) => j === i ? highlightedStrokeWidth.toString() : defaultStrokeWidth.toString());
 
             for (const [id, element] of this.animationTexts) {
@@ -34,8 +35,7 @@ export class DiagramBoxHighlightAnimator {
         }
 
         // Reset to original state
-        this.svgContainer.selectAll('rect')
-            .attr('stroke', d => d.color || defaultStrokeColor)
+        highlightedBoxes.attr('stroke', d => d.color || defaultStrokeColor)
             .attr('stroke-width', defaultStrokeWidth.toString());
 
         // Hide all animation texts

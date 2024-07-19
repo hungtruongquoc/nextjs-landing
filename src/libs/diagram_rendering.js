@@ -37,6 +37,15 @@ export class DiagramRenderer {
             .attr('viewBox', '0 0 1000 400')
             .attr('preserveAspectRatio', 'xMidYMid meet')
             .classed('svg-content-responsive', true);
+
+        // Append a rectangle to the SVG element as a background
+        this.svg.append('rect')
+            .attr('width', '100%')
+            .attr('height', '100%')
+            .attr('fill', 'white')
+            .attr('data-background', 'true') // Add a data attribute to identify the background
+            .lower(); // Ensure the rectangle is at the bottom layer
+
         this.diagram = diagram;
         this.nodes = diagram.nodes;
         this.defaultStrokeColor = diagram.defaultStrokeColor;

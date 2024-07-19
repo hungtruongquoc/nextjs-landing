@@ -9,7 +9,7 @@ const diagramConfig = {
     Client1: {highlightedTexts: ['Sends request'], label: 'Client', x: 50, y: 150},
     KongAPI: {
         highlightedTexts: ['Routes request', 'to services'],
-        label: 'Kong API Gateway',
+        label: 'Caddy API Gateway',
         x: 300,
         y: 150,
         color: 'green'
