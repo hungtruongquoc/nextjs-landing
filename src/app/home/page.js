@@ -74,7 +74,8 @@ export default function IndexPage() {
                         <li className="my-5">
                             <span className="font-bold">This landing page was developed with NextJS, Tailwind CSS</span>
                             <a className="font-black" href="https://github.com/hungtruongquoc/nextjs-landing"
-                               target="_blank" rel="noopener noreferrer">
+                               target="_blank" rel="noopener noreferrer"
+                               aria-label="NextJS Landing Page GitHub Repository">
                                 <FontAwesomeIcon icon={faGithubSquare}/>
                             </a>
                             <p className="font-bold">
@@ -89,12 +90,13 @@ export default function IndexPage() {
                         <li className="my-5">
                             <span className="font-bold">An Angular App showing list of assets</span> <a
                             className="font-black" href="https://github.com/hungtruongquoc/angular-asset-list"
-                            target="_blank" rel="noopener noreferrer">
+                            target="_blank" rel="noopener noreferrer" aria-label="Angular Asset List GitHub Repository">
                             <FontAwesomeIcon
                                 icon={faGithubSquare}/>
                         </a>
                             <p>
-                                Demo application <a href="https://angular.htruong83.com/" target="_blank" rel="noopener noreferrer">
+                                Demo application <a href="https://angular.htruong83.com/" target="_blank"
+                                                    rel="noopener noreferrer" aria-label="Angular Asset List Demo">
                                 <FontAwesomeIcon icon={faBrowser}/>
                             </a>
                             </p>
@@ -110,17 +112,21 @@ export default function IndexPage() {
                         <li className="my-5">
                             <span className="font-bold">A FastAPI demo</span> <a className="font-black"
                                                                                  href="https://github.com/hungtruongquoc/fast-api-demo"
-                                                                                 target="_blank" rel="noopener noreferrer">
+                                                                                 target="_blank"
+                                                                                 aria-label="FastAPI Demo GitHub Repository"
+                                                                                 rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithubSquare}/>
                         </a>
                             <p>
                                 Demo API v1 (Please contact me for API Key) <a
-                                href="https://fast-api.htruong83.com/api/v1" target="_blank">
+                                href="https://fast-api.htruong83.com/api/v1" target="_blank"
+                                aria-label="FastAPI Demo API v1">
                                 <FontAwesomeIcon icon={faBrowser}/>
                             </a>
                             </p>
                             <p>
-                                OpenAPI Doc <a href="https://fast-api.htruong83.com/docs" target="_blank">
+                                OpenAPI Doc <a href="https://fast-api.htruong83.com/docs" target="_blank"
+                                               aria-label="FastAPI Demo OpenAPI Documentation">
                                 <FontAwesomeIcon icon={faBrowser}/>
                             </a>
                             </p>
@@ -137,12 +143,15 @@ export default function IndexPage() {
                         <li className="my-5">
                             <span className="font-bold">Grooming Shop Demo</span> <a className="font-black"
                                                                                      href="https://github.com/hungtruongquoc/grooming-shop"
-                                                                                     target="_blank" rel="noopener noreferrer">
+                                                                                     target="_blank"
+                                                                                     aria-label="Grooming Shop Demo GitHub Repository"
+                                                                                     rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithubSquare}/>
                         </a>
                             <p>
                                 Shop Front End <a
-                                href="https://grooming.htruong83.com/" target="_blank">
+                                href="https://grooming.htruong83.com/" target="_blank"
+                                aria-label="Grooming Shop Front End">
                                 <FontAwesomeIcon icon={faBrowser}/>
                             </a>
                             </p>
@@ -162,24 +171,30 @@ export default function IndexPage() {
                             </h1>
                             <p className="mx-5">
                                 Demo front end application <a href="https://react-amplify.htruong83.com/"
+                                                              aria-label="React Amplify Demo"
                                                               target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faBrowser}/>
-                            </a> <a href="https://github.com/hungtruongquoc/react-amplify" target="_blank" rel="noopener noreferrer">
+                            </a> <a href="https://github.com/hungtruongquoc/react-amplify" target="_blank"
+                                    rel="noopener noreferrer" aria-label="React Amplify GitHub Repository">
                                 <FontAwesomeIcon icon={faGithubSquare}/>
                             </a>
                             </p>
                             <p className="mx-5">
-                                Demo Django API Doc <a href="http://django-demo.htruong83.com/" target="_blank" rel="noopener noreferrer">
+                                Demo Django API Doc <a href="http://django-demo.htruong83.com/" target="_blank"
+                                                       rel="noopener noreferrer" aria-label="Django API Documentation">
                                 <FontAwesomeIcon icon={faBrowser}/>
-                            </a> <a href="https://github.com/hungtruongquoc/django-ec2" target="_blank">
+                            </a> <a href="https://github.com/hungtruongquoc/django-ec2" target="_blank"
+                                    aria-label="Django EC2 GitHub Repository">
                                 <FontAwesomeIcon icon={faGithubSquare}/>
                             </a>
                             </p>
                             <p className="mx-5">
                                 NodeJS Proxy for HTTP REST API <a href="https://django-api-proxy.htruong83.com/swagger/"
+                                                                  aria-label="Django API Proxy Swagger"
                                                                   target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faBrowser}/>
                             </a> <a href="https://github.com/hungtruongquoc/express-passthrough-django-demo"
+                                    aria-label="Express Passthrough Django Demo GitHub Repository"
                                     target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faGithubSquare}/>
                             </a>
@@ -231,7 +246,8 @@ export default function IndexPage() {
                         </li>
                         <li className="pt-5">
                             <a className="text-green-500"
-                               href="https://app.takecommandhealth.com/sign-in?next=/member-portal" rel="noopener noreferrer">
+                               href="https://app.takecommandhealth.com/sign-in?next=/member-portal"
+                               rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faStar}/> Take Command Health Platform, Dalla, TX
                                 USA <FontAwesomeIcon
                                 icon={faArrowUpRightFromSquare}/>
