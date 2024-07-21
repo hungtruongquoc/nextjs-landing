@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import {config} from '@fortawesome/fontawesome-svg-core';
 import GoogleAnalytics from "../components/google_analytics";
 import dynamic from "next/dynamic";
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 // Dynamically import the client component
 const NavigationComponent = dynamic(() => import('../components/navigation_component'), {ssr: false});
@@ -30,7 +31,9 @@ export default function RootLayout({children}) {
         <NavigationComponent/>
         <div className="pt-16">
             <div className="container mx-auto">
-                {children}
+                <AntdRegistry>
+                    {children}
+                </AntdRegistry>
             </div>
         </div>
         </body>

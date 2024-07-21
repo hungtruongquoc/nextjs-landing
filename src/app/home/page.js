@@ -16,6 +16,8 @@ import {getCustomerList} from "@/libs/customer";
 import {getProjectList} from "@/libs/projects";
 import Link from "next/link";
 import {faGithubSquare, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import { Alert } from "antd";
+import Marquee from 'react-fast-marquee';
 
 export default function IndexPage() {
     const customerList = getCustomerList();
@@ -72,7 +74,7 @@ export default function IndexPage() {
                 <IntroductionItem title="Soure Code Links" id="source-code">
                     <ul className="pt-5 px-10 flex-col flex-nowrap gap-5">
                         <li className="my-5">
-                            <span className="font-bold">This landing page was developed with NextJS, Tailwind CSS</span>
+                            <span className="font-bold">This landing page was developed with NextJS, Tailwind CSS, Ant Design</span>
                             <a className="font-black" href="https://github.com/hungtruongquoc/nextjs-landing"
                                target="_blank" rel="noopener noreferrer"
                                aria-label="NextJS Landing Page GitHub Repository">
@@ -81,11 +83,13 @@ export default function IndexPage() {
                             <p className="font-bold">
                                 Tech Stack
                             </p>
-                            <ul>
-                                <li>Runtime: NodeJS</li>
-                                <li>Frontend: NextJS, Tailwind CSS</li>
-                                <li>Containerization: Docker, Railway</li>
-                            </ul>
+                            <Alert banner type="info" showIcon={false} message={
+                                <Marquee pauseOnHover gradient={false}>
+                                    <span className="p-2 font-bold bg-black text-white">Runtime: NodeJS</span>
+                                    <span className="p-2">Frontend: NextJS, Tailwind CSS, Ant Design</span>
+                                    <span className="p-2">Containerization: Docker, Railway</span>
+                                </Marquee>
+                            }></Alert>
                         </li>
                         <li className="my-5">
                             <span className="font-bold">An Angular App showing list of assets</span> <a
@@ -104,7 +108,7 @@ export default function IndexPage() {
                                 Tech Stack
                             </p>
                             <ul>
-                                <li>Runtime: NodeJS</li>
+                                <li className="py-4">Runtime <span className="p-2 font-bold bg-black text-white rounded">NodeJS</span></li>
                                 <li>Frontend: Angular 18, Server Side Rendering, NgRx Store, RxJS, Ant Design</li>
                                 <li>Containerization: Docker, Railway</li>
                             </ul>
@@ -134,7 +138,7 @@ export default function IndexPage() {
                                 Tech Stack
                             </p>
                             <ul>
-                                <li>Runtime: Python</li>
+                                <li className="py-4">Runtime <span className="p-2 font-bold bg-yellow-400 text-blue-700 rounded">Python</span></li>
                                 <li>Framework: FastAPI</li>
                                 <li>Cloud service: FireBase, FireStore</li>
                                 <li>Containerization: Docker, Railway</li>
@@ -159,7 +163,10 @@ export default function IndexPage() {
                                 Tech Stack
                             </p>
                             <ul>
-                                <li>Runtime: Python, TypeScript</li>
+                                <li className="py-4">
+                                    Runtime <span className="p-2 bg-yellow-400 text-blue-700 rounded font-bold">Python</span>
+                                    <span className="p-2 font-bold bg-black text-white rounded">NodeJS</span>
+                                </li>
                                 <li>Framework: FastAPI, Quasar (Vue3)</li>
                                 <li>Headless CMS: Contentful</li>
                                 <li>Containerization: Docker, Railway</li>
@@ -209,7 +216,11 @@ export default function IndexPage() {
                                 Tech Stack
                             </p>
                             <ul>
-                                <li>Runtime: Python, NodeJS</li>
+                                <li className="py-4">
+                                    Runtime <span
+                                    className="p-2 bg-yellow-400 text-blue-700 rounded font-bold">Python</span>
+                                    <span className="p-2 font-bold bg-black text-white rounded">NodeJS</span>
+                                </li>
                                 <li>Database: SQLite 3</li>
                                 <li>Framework: Django (Django Rest Framework), ReactJS, ExpressJS</li>
                                 <li>Cache: Redis</li>
