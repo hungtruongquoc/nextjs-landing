@@ -2,7 +2,14 @@ import Image from 'next/image'
 import HeadshotImage from '../../../public/1714499008926.jpeg'
 import IntroductionItem from "@/components/introduction_item";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowUpRightFromSquare, faStar, faBook as faFileDoc, faBrowser, faMobile, faAt} from "@fortawesome/pro-solid-svg-icons";
+import {
+    faArrowUpRightFromSquare,
+    faStar,
+    faBook as faFileDoc,
+    faBrowser,
+    faMobile,
+    faAt
+} from "@fortawesome/pro-solid-svg-icons";
 import CustomerList from "@/components/customer_list";
 import TechStackList from "@/components/techstack_list";
 import {getCustomerList} from "@/libs/customer";
@@ -38,19 +45,24 @@ export default function IndexPage() {
                             src={HeadshotImage}
                             width="200"
                             height="200"
-                            alt="Hung Truong, #OPEN_TO_WORK">
+                            alt="Headshot of Hung Truong">
                         </Image>
-                        <ul>
-                            <span className="font-bold text-2xl">Contact Info</span>
+                        <ul aria-labelledby="contact-info">
+                            <span id="contact-info" className="font-bold text-2xl">Contact Info</span>
                             <li>
-                                <span className="font-bold"><FontAwesomeIcon fixedWidth icon={faAt}/> </span><span>hungtruongquoc@gmail.com</span>
+                                <span className="font-bold"><FontAwesomeIcon fixedWidth
+                                                                             icon={faAt}/> </span>
+                                <a href="mailto:hungtruongquoc@gmail.com">hungtruongquoc@gmail.com</a>
                             </li>
                             <li>
-                                <span className="font-bold"><FontAwesomeIcon fixedWidth icon={faMobile}/> </span><span>574-386-3696</span>
+                                <span className="font-bold"><FontAwesomeIcon fixedWidth
+                                                                             icon={faMobile}/> </span>
+                                <a href="tel:574-386-3696">574-386-3696</a>
                             </li>
                             <li>
                                 <span className="font-bold"><FontAwesomeIcon fixedWidth icon={faLinkedin}/> </span> <a
-                                href="https://www.linkedin.com/in/htruong83/" target="_blank">htruong83</a>
+                                href="https://www.linkedin.com/in/htruong83/" target="_blank"
+                                rel="noopener noreferrer">htruong83</a>
                             </li>
                         </ul>
                     </div>
@@ -60,11 +72,11 @@ export default function IndexPage() {
                 <IntroductionItem title="Soure Code Links" id="source-code">
                     <ul className="pt-5 px-10 flex-col flex-nowrap gap-5">
                         <li className="my-5">
-                            <span className="font-bold">This landing page was developed with NextJS, Tailwind CSS</span> <a className="font-black"
-                                                                                                                            href="https://github.com/hungtruongquoc/nextjs-landing"
-                                                                                                                            target="_blank">
-                            <FontAwesomeIcon icon={faGithubSquare}/>
-                        </a>
+                            <span className="font-bold">This landing page was developed with NextJS, Tailwind CSS</span>
+                            <a className="font-black" href="https://github.com/hungtruongquoc/nextjs-landing"
+                               target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon icon={faGithubSquare}/>
+                            </a>
                             <p className="font-bold">
                                 Tech Stack
                             </p>
@@ -75,14 +87,14 @@ export default function IndexPage() {
                             </ul>
                         </li>
                         <li className="my-5">
-                            <span className="font-bold">An Angular App showing list of assets</span> <a className="font-black"
-                                                                                                        href="https://github.com/hungtruongquoc/angular-asset-list"
-                                                                                                        target="_blank">
+                            <span className="font-bold">An Angular App showing list of assets</span> <a
+                            className="font-black" href="https://github.com/hungtruongquoc/angular-asset-list"
+                            target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon
                                 icon={faGithubSquare}/>
                         </a>
                             <p>
-                                Demo application <a href="https://angular.htruong83.com/" target="_blank">
+                                Demo application <a href="https://angular.htruong83.com/" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faBrowser}/>
                             </a>
                             </p>
@@ -98,7 +110,7 @@ export default function IndexPage() {
                         <li className="my-5">
                             <span className="font-bold">A FastAPI demo</span> <a className="font-black"
                                                                                  href="https://github.com/hungtruongquoc/fast-api-demo"
-                                                                                 target="_blank">
+                                                                                 target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithubSquare}/>
                         </a>
                             <p>
@@ -123,19 +135,41 @@ export default function IndexPage() {
                             </ul>
                         </li>
                         <li className="my-5">
+                            <span className="font-bold">Grooming Shop Demo</span> <a className="font-black"
+                                                                                     href="https://github.com/hungtruongquoc/grooming-shop"
+                                                                                     target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faGithubSquare}/>
+                        </a>
+                            <p>
+                                Shop Front End <a
+                                href="https://grooming.htruong83.com/" target="_blank">
+                                <FontAwesomeIcon icon={faBrowser}/>
+                            </a>
+                            </p>
+                            <p className="font-bold">
+                                Tech Stack
+                            </p>
+                            <ul>
+                                <li>Runtime: Python, TypeScript</li>
+                                <li>Framework: FastAPI, Quasar (Vue3)</li>
+                                <li>Headless CMS: Contentful</li>
+                                <li>Containerization: Docker, Railway</li>
+                            </ul>
+                        </li>
+                        <li className="my-5">
                             <h1 className="font-black">
                                 A React Amplify, Django demo
                             </h1>
                             <p className="mx-5">
                                 Demo front end application <a href="https://react-amplify.htruong83.com/"
-                                                              target="_blank">
+                                                              target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faBrowser}/>
-                            </a> <a href="https://github.com/hungtruongquoc/react-amplify" target="_blank">
+                            </a> <a href="https://github.com/hungtruongquoc/react-amplify" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faGithubSquare}/>
                             </a>
                             </p>
                             <p className="mx-5">
-                                Demo Django API Doc <a href="http://django-demo.htruong83.com/" target="_blank">
+                                Demo Django API Doc <a href="http://django-demo.htruong83.com/" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faBrowser}/>
                             </a> <a href="https://github.com/hungtruongquoc/django-ec2" target="_blank">
                                 <FontAwesomeIcon icon={faGithubSquare}/>
@@ -143,10 +177,10 @@ export default function IndexPage() {
                             </p>
                             <p className="mx-5">
                                 NodeJS Proxy for HTTP REST API <a href="https://django-api-proxy.htruong83.com/swagger/"
-                                                                  target="_blank">
+                                                                  target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faBrowser}/>
                             </a> <a href="https://github.com/hungtruongquoc/express-passthrough-django-demo"
-                                    target="_blank">
+                                    target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faGithubSquare}/>
                             </a>
                             </p>
@@ -176,7 +210,7 @@ export default function IndexPage() {
                     <ul className="pt-5 px-10">
                         <li>
                             <a className="text-amber-400" href="https://beetrack.io/home-en/"
-                               target="_blank">
+                               target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faStar}/> Enterprise Level Asset Management
                                 Platform <FontAwesomeIcon
                                 icon={faArrowUpRightFromSquare}/>
@@ -197,7 +231,7 @@ export default function IndexPage() {
                         </li>
                         <li className="pt-5">
                             <a className="text-green-500"
-                               href="https://app.takecommandhealth.com/sign-in?next=/member-portal">
+                               href="https://app.takecommandhealth.com/sign-in?next=/member-portal" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faStar}/> Take Command Health Platform, Dalla, TX
                                 USA <FontAwesomeIcon
                                 icon={faArrowUpRightFromSquare}/>
