@@ -85,9 +85,17 @@ export default function IndexPage() {
                             </p>
                             <Alert banner type="info" showIcon={false} message={
                                 <Marquee pauseOnHover gradient={false}>
-                                    <span className="p-2 font-bold bg-black text-white">Runtime: NodeJS</span>
-                                    <span className="p-2">Frontend: NextJS, Tailwind CSS, Ant Design</span>
-                                    <span className="p-2">Containerization: Docker, Railway</span>
+                                    <span className="px-2 font-bold bg-black text-white rounded">Runtime</span>
+                                    <span className="px-2 text-black">NodeJS</span>
+                                    <span className="px-2 font-bold bg-black text-white rounded">Frontend</span>
+                                    <span className="px-2 text-black">NextJS</span>
+                                    <span className="text-blue-700 px-2">Ant Design</span>
+                                    <span className="text-blue-700 px-2">Tailwind CSS</span>
+                                    <span className="text-orange-600 px-2">D3</span>
+                                    <span
+                                        className="px-2 mx-2 font-bold rounded bg-black text-white">Containerization</span>
+                                    <span className="px-2 text-blue-700">Docker</span>
+                                    <span className="px-2 text-black">Railway</span>
                                 </Marquee>
                             }></Alert>
                         </li>
@@ -167,7 +175,7 @@ export default function IndexPage() {
                                     Runtime <span className="p-2 bg-yellow-400 text-blue-700 rounded font-bold">Python</span>
                                     <span className="p-2 font-bold bg-black text-white rounded">NodeJS</span>
                                 </li>
-                                <li>Framework: FastAPI, Quasar (Vue3)</li>
+                                <li>Framework: FastAPI, Quasar (Vue3), GraphQL</li>
                                 <li>Headless CMS: Contentful</li>
                                 <li>Containerization: Docker, Railway</li>
                             </ul>
@@ -222,7 +230,7 @@ export default function IndexPage() {
                                     <span className="p-2 font-bold bg-black text-white rounded">NodeJS</span>
                                 </li>
                                 <li>Database: SQLite 3</li>
-                                <li>Framework: Django (Django Rest Framework), ReactJS, ExpressJS</li>
+                                <li>Framework: Django (Django Rest Framework), ExpressJS, ReactJS, ChartJS</li>
                                 <li>Cache: Redis</li>
                                 <li>
                                     Cloud service: Amplify, Elastic Beanstalk, CodePipeline, CodeBuild, S3, CloudFront
