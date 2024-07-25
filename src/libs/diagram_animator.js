@@ -11,9 +11,7 @@ export class DiagramBoxHighlightAnimator {
         this.specialSequence = ["FastAPI", "Proxy", "FastAPI2"]; // Define the sequence here
     }
 
-    async animateBorders(nodes, perElementWait) {
-        const {highlightedColor, highlightedStrokeWidth, defaultStrokeWidth, defaultStrokeColor} = this.diagram;
-
+    async animateBorders(nodes, perElementWait){
         // Add animation texts
         const nodeTexts = this.diagram.getNodeHighlightTexts();
         Object.entries(nodeTexts).forEach(([nodeId, textLines]) => {
@@ -26,22 +24,12 @@ export class DiagramBoxHighlightAnimator {
             const node = nodes[i];
             const isSpecialNode = this.specialSequence.includes(node.id);
             const nodeToHighlight = this.specialSequence[this.specialIndex];
-
-            let shouldHighlight;
-            if (isSpecialNode) {
-                shouldHighlight = node.id === nodeToHighlight;
-            } else {
-                shouldHighlight = !isSpecialNode;
-            }
+            const shouldHighlight = isSpecialNode ? node.id === nodeToHighlight : true;
 
             this.updateNodeStyles(highlightedBoxes, shouldHighlight, node);
 
             for (const [id, element] of this.animationTexts) {
-                if (node.id === id) {
-                    element.style('visibility', shouldHighlight ? 'visible' : 'hidden');
-                } else {
-                    element.style('visibility', 'hidden');
-                }
+                element.style('visibility', (node.id === id && shouldHighlight) ? 'visible' : 'hidden');
             }
             // Wait for the specified time before moving to the next node
             await new Promise(resolve => setTimeout(resolve, perElementWait));
@@ -56,11 +44,6 @@ export class DiagramBoxHighlightAnimator {
         }
         this.runCounter++;
         this.specialIndex = (this.specialIndex + 1) % this.specialSequence.length
-        console.log({
-            runCounter: this.runCounter,
-            specialIndex: this.specialIndex,
-            specialNode: this.specialSequence[this.specialIndex]
-        })
     }
 
     updateNodeStyles(highlightedBoxes, shouldHighlight, node) {
