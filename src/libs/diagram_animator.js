@@ -24,8 +24,6 @@ export class DiagramBoxHighlightAnimator {
 
         for (let i = 0; i < nodes.length; i++) {
             const node = nodes[i];
-            // const excludeNode = (this.runCounter % 2 === 1 && (node.id === "FastAPI" || node.id === "FastAPI2"))
-            //     || (this.runCounter % 2 === 0 && node.id === "Proxy");
             const isSpecialNode = this.specialSequence.includes(node.id);
             const nodeToHighlight = this.specialSequence[this.specialIndex];
 
@@ -36,11 +34,7 @@ export class DiagramBoxHighlightAnimator {
                 shouldHighlight = !isSpecialNode;
             }
 
-            highlightedBoxes.attr('stroke', (box, j) => {
-                return shouldHighlight && box.id === node.id ? highlightedColor : (box.color || defaultStrokeColor);
-            }).attr('stroke-width', (d, j) => {
-                return shouldHighlight && d.id === node.id ? highlightedStrokeWidth.toString() : defaultStrokeWidth.toString();
-            });
+            this.updateNodeStyles(highlightedBoxes, shouldHighlight, node);
 
             for (const [id, element] of this.animationTexts) {
                 if (node.id === id) {
@@ -54,8 +48,7 @@ export class DiagramBoxHighlightAnimator {
         }
 
         // Reset to original state
-        highlightedBoxes.attr('stroke', d => d.color || defaultStrokeColor)
-            .attr('stroke-width', defaultStrokeWidth.toString());
+        this.resetNodeStyles(highlightedBoxes);
 
         // Hide all animation texts
         for (const element of this.animationTexts.values()) {
@@ -63,7 +56,28 @@ export class DiagramBoxHighlightAnimator {
         }
         this.runCounter++;
         this.specialIndex = (this.specialIndex + 1) % this.specialSequence.length
-        console.log({runCounter: this.runCounter, specialIndex: this.specialIndex, specialNode: this.specialSequence[this.specialIndex]})
+        console.log({
+            runCounter: this.runCounter,
+            specialIndex: this.specialIndex,
+            specialNode: this.specialSequence[this.specialIndex]
+        })
+    }
+
+    updateNodeStyles(highlightedBoxes, shouldHighlight, node) {
+        const {highlightedColor, highlightedStrokeWidth, defaultStrokeWidth, defaultStrokeColor} = this.diagram;
+
+        highlightedBoxes.attr('stroke', (box, j) => {
+            return shouldHighlight && box.id === node.id ? highlightedColor : (box.color || defaultStrokeColor);
+        }).attr('stroke-width', (d, j) => {
+            return shouldHighlight && d.id === node.id ? highlightedStrokeWidth.toString() : defaultStrokeWidth.toString();
+        });
+    }
+
+    resetNodeStyles(highlightedBoxes) {
+        const {defaultStrokeWidth, defaultStrokeColor} = this.diagram;
+
+        highlightedBoxes.attr('stroke', d => d.color || defaultStrokeColor)
+            .attr('stroke-width', defaultStrokeWidth.toString());
     }
 
     startAnimation(perElementWait) {
