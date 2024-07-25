@@ -18,6 +18,13 @@ const diagramConfig = {
         highlightedTexts: ['Processes requests', 'for FastAPI service'],
         label: 'FastAPI Service',
         x: 550,
+        y: 250,
+        color: 'maroon'
+    },
+    FastAPI2: {
+        highlightedTexts: ['Processes requests', 'for FastAPI service'],
+        label: 'FastAPI Service 2',
+        x: 550,
         y: 50,
         color: 'maroon'
     },
@@ -25,7 +32,7 @@ const diagramConfig = {
         highlightedTexts: ['Processes requests', 'for Proxy service'],
         label: 'EB App in AWS',
         x: 550,
-        y: 250,
+        y: 450,
         color: 'violet'
     },
     KongAPI2: {
@@ -41,7 +48,9 @@ const diagramConfig = {
 const links = [
     {source: 'Client1', target: 'KongAPI', type: 'Request Type 1'},
     {source: 'KongAPI', target: 'FastAPI', type: 'Forward to FastAPI Service'},
+    {source: 'KongAPI', target: 'FastAPI2', type: 'Forward to FastAPI Service'},
     {source: 'FastAPI', target: 'KongAPI2', type: 'Response back from FastAPI Service'},
+    {source: 'FastAPI2', target: 'KongAPI2', type: 'Response back from FastAPI Service'},
     {source: 'KongAPI2', target: 'Client2', type: 'Response from FastAPI Service'},
     {source: 'KongAPI', target: 'Proxy', type: 'Forward to Proxy Service'},
     {source: 'Proxy', target: 'KongAPI2', type: 'Response back from Proxy Service'},

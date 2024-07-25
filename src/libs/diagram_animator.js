@@ -7,6 +7,8 @@ export class DiagramBoxHighlightAnimator {
         this.diagram = diagram;
         this.animationTexts = new Map();
         this.runCounter = 0;
+        this.specialIndex = 0;
+        this.specialSequence = ["FastAPI", "Proxy", "FastAPI2"]; // Define the sequence here
     }
 
     async animateBorders(nodes, perElementWait) {
@@ -22,29 +24,27 @@ export class DiagramBoxHighlightAnimator {
 
         for (let i = 0; i < nodes.length; i++) {
             const node = nodes[i];
-            const excludeNode = (this.runCounter % 2 === 1 && node.id === "FastAPI")
-                || (this.runCounter % 2 === 0 && node.id === "Proxy");
+            // const excludeNode = (this.runCounter % 2 === 1 && (node.id === "FastAPI" || node.id === "FastAPI2"))
+            //     || (this.runCounter % 2 === 0 && node.id === "Proxy");
+            const isSpecialNode = this.specialSequence.includes(node.id);
+            const nodeToHighlight = this.specialSequence[this.specialIndex];
+
+            let shouldHighlight;
+            if (isSpecialNode) {
+                shouldHighlight = node.id === nodeToHighlight;
+            } else {
+                shouldHighlight = !isSpecialNode;
+            }
 
             highlightedBoxes.attr('stroke', (box, j) => {
-                if (excludeNode && node.id === box.id) {
-                    return (box.color || defaultStrokeColor);
-                }
-                return j === i ? highlightedColor : (box.color || defaultStrokeColor)
-            })
-                .attr('stroke-width', (d, j) => {
-                    if (excludeNode && node.id === d.id) {
-                        return defaultStrokeWidth.toString();
-                    }
-                    return j === i ? highlightedStrokeWidth.toString() : defaultStrokeWidth.toString()
-                });
-            
+                return shouldHighlight && box.id === node.id ? highlightedColor : (box.color || defaultStrokeColor);
+            }).attr('stroke-width', (d, j) => {
+                return shouldHighlight && d.id === node.id ? highlightedStrokeWidth.toString() : defaultStrokeWidth.toString();
+            });
+
             for (const [id, element] of this.animationTexts) {
-                if (nodes[i].id === id) {
-                    if (excludeNode && nodes[i].id === id) {
-                        element.style('visibility', 'hidden');
-                    } else {
-                        element.style('visibility', 'visible');
-                    }
+                if (node.id === id) {
+                    element.style('visibility', shouldHighlight ? 'visible' : 'hidden');
                 } else {
                     element.style('visibility', 'hidden');
                 }
@@ -62,6 +62,8 @@ export class DiagramBoxHighlightAnimator {
             element.style('visibility', 'hidden');
         }
         this.runCounter++;
+        this.specialIndex = (this.specialIndex + 1) % this.specialSequence.length
+        console.log({runCounter: this.runCounter, specialIndex: this.specialIndex, specialNode: this.specialSequence[this.specialIndex]})
     }
 
     startAnimation(perElementWait) {

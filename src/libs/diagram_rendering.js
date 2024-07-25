@@ -34,7 +34,7 @@ export class Diagram {
 export class DiagramRenderer {
     constructor(svgElement, diagram) {
         this.svg = d3.select(svgElement)
-            .attr('viewBox', '0 0 1300 600')
+            .attr('viewBox', '0 0 1300 760')
             .attr('preserveAspectRatio', 'xMidYMid meet')
             .classed('svg-content-responsive', true);
 
