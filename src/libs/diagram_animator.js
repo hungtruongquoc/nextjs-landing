@@ -20,19 +20,29 @@ export class DiagramBoxHighlightAnimator {
 
         const highlightedBoxes = this.svgContainer.selectAll('rect:not([data-background="true"])')
 
-        for (let i = 0; i < nodes.length; i++) {
-            const node = nodes[i];
+        // Filter the nodes to be highlighted
+        const filteredNodes = nodes.filter(node => {
             const isSpecialNode = this.specialSequence.includes(node.id);
             const nodeToHighlight = this.specialSequence[this.specialIndex];
-            const shouldHighlight = isSpecialNode ? node.id === nodeToHighlight : true;
+            return isSpecialNode ? node.id === nodeToHighlight : true;
+        });
 
-            this.updateNodeStyles(highlightedBoxes, shouldHighlight, node);
+        for (let i = 0; i < filteredNodes.length; i++) {
+            const node = filteredNodes[i];
+
+            this.updateNodeStyles(highlightedBoxes, true, node);
 
             for (const [id, element] of this.animationTexts) {
-                element.style('visibility', (node.id === id && shouldHighlight) ? 'visible' : 'hidden');
+                element.style('visibility', (node.id === id) ? 'visible' : 'hidden');
             }
             // Wait for the specified time before moving to the next node
             await new Promise(resolve => setTimeout(resolve, perElementWait));
+
+            // Reset the node styles after the wait
+            this.updateNodeStyles(highlightedBoxes, false, node);
+            for (const element of this.animationTexts.values()) {
+                element.style('visibility', 'hidden');
+            }
         }
 
         // Reset to original state
