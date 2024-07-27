@@ -65,7 +65,7 @@ const ArchitectureChart = () => {
         const diagramRender = new DiagramRenderer(svgRef.current, diagram);
         diagramRender.render();
         const diagramAnimator = new DiagramBoxHighlightAnimator(diagramRender.svgElement, diagram);
-        diagramAnimator.startAnimation(2000);
+        diagramAnimator.startAnimation(1500);
         return () => diagramAnimator.cleanup();
     }, [diagram]);
 
