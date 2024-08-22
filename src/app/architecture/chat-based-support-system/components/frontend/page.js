@@ -1,6 +1,5 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCircle, faFile} from "@fortawesome/pro-solid-svg-icons";
-import Link from "next/link";
+import {faCircle} from "@fortawesome/pro-solid-svg-icons";
 
 export default function ArchitectureComponentFrontend() {
     return (

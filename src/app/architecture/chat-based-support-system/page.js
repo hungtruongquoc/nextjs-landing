@@ -39,6 +39,12 @@ export default function ChatBasedSupportSystem() {
                 </li>
                 <li>
                     <FontAwesomeIcon icon={faFile} listItem fixedWidth/>
+                    <Link href="/architecture/chat-based-support-system/erd">
+                        Entity Relationship Diagram
+                    </Link>
+                </li>
+                <li>
+                    <FontAwesomeIcon icon={faFile} listItem fixedWidth/>
                     <Link href="/architecture/chat-based-support-system/components/monitoring">
                         Components of Monitoring
                     </Link>
@@ -348,10 +354,9 @@ export default function ChatBasedSupportSystem() {
                     </li>
                 </ul>
 
-                <h3>2. Authentication Flow</h3>
+                <h3 className="font-bold text-lg capitalize mt-2">2. Authentication Flow</h3>
                 <ul>
                     <li>
-                        <strong>Flow</strong>
                         <p>When a user or agent initiates an action that requires authentication (e.g., logging in,
                             accessing secure resources), the request is routed through the <strong>API Gateway</strong>.
                         </p>
@@ -363,10 +368,9 @@ export default function ChatBasedSupportSystem() {
                     </li>
                 </ul>
 
-                <h3>3. Chat Service Flow</h3>
+                <h3 className="font-bold text-lg capitalize mt-2">3. Chat Service Flow</h3>
                 <ul>
                     <li>
-                        <strong>Flow</strong>
                         <p>A client requests to initiate a chat, send a message, or retrieve chat history.</p>
                         <p>The request is sent to the <strong>API Gateway</strong>, which forwards it to the <strong>Kafka
                             Ingestion for Chat Services</strong>. Kafka handles the message ingestion and routes it to
@@ -379,10 +383,9 @@ export default function ChatBasedSupportSystem() {
                     </li>
                 </ul>
 
-                <h3>4. Notification Flow</h3>
+                <h3 className="font-bold text-lg capitalize mt-2">4. Notification Flow</h3>
                 <ul>
                     <li>
-                        <strong>Flow</strong>
                         <p>When a new chat request is received, or any other significant event occurs, a notification
                             needs to be sent to the appropriate agent.</p>
                         <p>The Chat Service or relevant component sends a notification request to the <strong>Notification
@@ -396,10 +399,9 @@ export default function ChatBasedSupportSystem() {
                     </li>
                 </ul>
 
-                <h3>5. Analytics Flow</h3>
+                <h3 className="font-bold text-lg capitalize mt-2">5. Analytics Flow</h3>
                 <ul>
                     <li>
-                        <strong>Flow</strong>
                         <p>The system continuously generates data for analytics, such as chat interactions, user
                             behavior, and system performance metrics.</p>
                         <p>This data is ingested by <strong>Kafka Ingestion for Data Analytics</strong>, which collects
@@ -410,10 +412,9 @@ export default function ChatBasedSupportSystem() {
                     </li>
                 </ul>
 
-                <h3>6. Monitoring Flow</h3>
+                <h3 className="font-bold text-lg capitalize mt-2">6. Monitoring Flow</h3>
                 <ul>
                     <li>
-                        <strong>Flow:</strong>
                         <p>The system&apos;s health and performance metrics are continuously monitored.</p>
                         <p>Metrics from various components (e.g., API Gateway, Chat Services, Databases) are collected
                             by <strong>Prometheus</strong>.</p>
@@ -424,7 +425,7 @@ export default function ChatBasedSupportSystem() {
                     </li>
                 </ul>
 
-                <h3>Summary</h3>
+                <h2 className="font-bold text-xl mb-2" id="compliance-security">Summary</h2>
                 <p>
                     - <strong>Client Requests:</strong> Handled through the CDN and Ingress for static content, with
                     WebSocket connections managed by the API Gateway for real-time interactions.<br/>
